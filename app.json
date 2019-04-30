@@ -1,20 +1,20 @@
 {
-  "pages":[
+  "pages": [
     "pages/recruit/recruit",
     "pages/recruit/new_recruit/new_recruit",
     "pages/my/my"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
-  "tabBar":{
+  "tabBar": {
     "color": "#a9b7b7",
     "selectedColor": "#1296db",
     "borderStyle": "black",
-    "list":[
+    "list": [
       {
         "iconPath": "/imgs/TabbarIcon/icon_new_recruit.png",
         "selectedIconPath": "/imgs/TabbarIcon/icon_new_recruit_fil.png",
@@ -28,5 +28,6 @@
         "pagePath": "pages/my/my"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
