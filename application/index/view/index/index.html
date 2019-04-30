@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- StyleSheet -->
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.css" rel="stylesheet">
+
+
+    <style>
+
+        .dataTables_info {
+            padding-top: 8px;
+            white-space: nowrap;
+        }
+
+        .dataTables_paginate {
+            text-align: right;
+            height: auto;
+        }
+
+        #stuff-list table tbody button {
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+
+        @media screen and (max-width: 767px) {
+            .dataTables_info, .dataTables_paginate {
+                text-align: center;
+            }
+        }
+
+        @media screen and (max-width: 1321px) {
+            .reduce-hide-1 {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 1000px) {
+            .reduce-hide-2 {
+                display: none;
+            }
+        }
+
+        [v-cloak] {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container-fluid">
+    <div id="vue-content" v-cloak>
+        <!--		当页面缩小只显示部分信息，且不能添加-->
+        <!--		ADD: 层级减少，兼容下小屏幕电脑-->
+        <div class="row">
+            <div class="col-sm-12 col-md-12">
+                <div class="box box-success">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">图书列表</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="dataTalbes_wrapper form-inline dt-bootstrap" style="text-align: right">
+
+                            <div class="row">
+                                <div class="col-sm-6">
+
+                                </div>
+                            </div>
+                            <div class="form-group col-xs-12">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="输入关键字" v-model="search.content" style="height: 36px">
+                                    <div class="input-group-addon" style="padding: 0">
+                                        <button class="btn btn-primary" @click="search_()" style="z-index: 999;">搜索</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="row" id="stuff-list">
+                                <div class="col-sm-12">
+                                    <table class="table table-bordered table-striped dataTable table-hover text-center" role="grid" id="stuff-table">
+                                        <thead>
+                                        <tr>
+                                            <th class="reduce-hide-1 text-center">序号</th>
+                                            <th class="text-center">图书名</th>
+                                            <th class="reduce-hide-2 text-center">在借数量</th>
+                                            <th class="reduce-hide-2 text-center">总计数量</th>
+                                            <th class="reduce-hide-2 text-center" colspan="2">借阅情况</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr v-cloak v-for="(item, index) in stuffAll" v-show="page.first - 1 < index && page.last - 1 > index">
+                                            <th class="reduce-hide-1 text-center">{{index+1}}</td>
+                                            <td>{{item.bookName}}</td>
+                                            <td class="reduce-hide-2">{{item.borNum}}</td>
+                                            <td class="reduce-hide-2">{{item.sumNum}}</td>
+                                            <td class="reduce-hide-2">
+                                                <button type="button" class="btn btn-block btn-success"  data-toggle="modal" data-target="#borrow" @click="updateBorrowInfo(item.bookId, item.bookName)">我要借阅</button>
+                                            </td>
+                                            <td class="reduce-hide-2">
+                                                <button type="button" class="btn btn-block btn-info" data-toggle="modal" data-target="#inf" @click="updateBorrowLog(item.bookId)">借阅情况</button>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="col-sm-9">
+                                        <div class="dataTables_info text-center">Showing {{page.first + 1}} to {{page.last - 1}} of {{stuffAll.length}} books</div>
+                                    </div>
+                                    <div class="col-sm-3 ">
+                                        <button type="button" class="btn btn-block btn-primary" data-toggle="modal" data-target="#myBorrow">我的借阅</button>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="dataTables_paginate paging_simple_numbers">
+                                        <ul class="pagination" style="margin: 0">
+                                            <li class="pagination_button previous "><a href="#" @click.prevent @click="lastPage()"><span class="glyphicon glyphicon-chevron-left"></span> </a></li>
+                                            <li :class="{pagination_button:true, active:style.s1}"><a href="#" @click.prevent @click="updatePage(index + 1)">{{index + 1}}</a></li>
+                                            <li :class="{pagination_button:true, active:style.s2}"><a href="#" @click.prevent @click="updatePage(index + 2)">{{index + 2}}</a></li>
+                                            <li :class="{pagination_button:true, active:style.s3}"><a href="#" @click.prevent @click="updatePage(index + 3)">{{index + 3}}</a></li>
+                                            <li :class="{pagination_button:true, active:style.s4}"><a href="#" @click.prevent @click="updatePage(index + 4)">{{index + 4}}</a></li>
+                                            <li :class="{pagination_button:true, active:style.s5}"><a href="#" @click.prevent @click="updatePage(index + 5)">{{index + 5}}</a></li>
+                                            <li class="pagination_button next"><a href="#" @click.prevent @click="nextPage()"><span class="glyphicon glyphicon-chevron-right"></span> </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--模态框 弹出框 借阅图书-->
+        <div role="dialog" class="modal fade bs-example-modal-sm" id="borrow">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                        <h3 class="box-title">借阅图书</h3>
+                    </div>
+                    <div class="modal-body text-right">
+                        <table class="table table-hover text-center">
+                            <tbody>
+                            <tr>
+                                <th>图书名称</th>
+                                <td>{{borrowInfo.bookName}}</td>
+                            </tr>
+                            <tr>
+                                <th>借阅人</th>
+                                <td>{{borrowInfo.reader}}</td>
+                            </tr>
+                            <tr>
+                                <th>借阅日期</th>
+                                <td>{{borrowInfo.borrowDate}}</td>
+                            </tr>
+                            <tr>
+                                <th>还书日期</th>
+                                <td><input class="form-control" name="time" type="date" placeholder="还书日期" v-model="borrowInfo.returnDate"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <button type="submit" class="btn btn-block btn-primary" data-dismiss="modal" @click="borrowBook(borrowInfo.bookId);">借阅</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--模态框 弹出框 借阅信息-->
+        <div role="dialog" class="modal fade bs-example-modal-sm" id="inf">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                        <h3 class="box-title">借阅信息</h3>
+                    </div>
+                    <div class="modal-body text-right">
+                        <table class="table table-hover text-center" >
+                            <tbody>
+                            <tr v-cloak v-for="(item, index) in borrowLog">
+                                <th>借书人</th>
+                                <td>{{item.reader}}</td>
+                                <th>借出时间</th>
+                                <td>{{item.borrowDate}}</td>
+                                <th>还书时间</th>
+                                <td>{{item.returnDate}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--模态框 弹出框 我的借阅信息-->
+        <div role="dialog" class="modal fade bs-example-modal-lg" id="myBorrow">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">
+                            <span>&times;</span>
+                        </button>
+                        <h3 class="box-title">我的借阅信息</h3>
+                    </div>
+                    <div class="modal-body text-right">
+                        <table class="table table-hover text-center">
+                            <tbody>
+                            <tr v-cloak v-for="(item, index) in myBorrowLog">
+                                <th>图书名称</th>
+                                <td>{{item.bookName}}</td>
+                                <th>借出时间</th>
+                                <td>{{item.borrowDate}}</td>
+                                <th>还书时间</th>
+                                <td>{{item.returnDate}}</td>
+                                <td class="reduce-hide-2">
+                                    <button type="button" class="btn btn-block btn-success" @click="returnBook(item.bookId);">我要还书</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>>
+<script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.js"></script>
+<!-- JavaScript -->
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+<script src="https://cdn.bootcss.com/vue/2.6.6/vue.js"></script>
+<script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.js"></script>
+<script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js"></script>
+<script>
+    new Vue({
+        el: '#vue-content',
+        data: {
+            time: '',
+            borrowInfo: {
+                reader:'',
+                bookId:'',
+                bookName:'',
+                borrowDate: '',
+                returnDate: '',
+            },
+            //记录我的借阅信息
+            myBorrowLog:[
+                {
+                    bookId:'123',
+                    bookName:'数据结构',
+                    borrowDate: '18/09/12',
+                    returnDate: '18/12/12',
+                },
+                {
+                    bookId:'456',
+                    bookName:'java编程思想',
+                    borrowDate: '18/09/12',
+                    returnDate: '18/12/12',
+                },
+                {
+                    bookId:'789',
+                    bookName:'科学计算与数学建模',
+                    borrowDate: '18/09/12',
+                    returnDate: '18/12/12',
+                }
+            ],
+            //记录借阅信息
+            borrowLog: [
+                {
+
+                    reader:'qwer',
+                    borrowDate: '18/09/12',
+                    returnDate: '18/12/12',
+                },
+                {
+                    reader:'qwer',
+                    borrowDate: '18/09/12',
+                    returnDate: '18/12/12',
+                },
+                {
+                    reader:'qwer',
+                    borrowDate: '18/09/12',
+                    returnDate: '18/12/12',
+                },
+                {
+                    reader:'qwer',
+                    borrowDate: '18/09/12',
+                    returnDate: '18/12/12',
+                }
+            ],
+            //按XX搜索  首选name
+            search: {
+                options: "name",
+                content: ""
+            },
+            //存储图书信息
+            stuffAll: [
+                {
+                    bookId:'123',
+                    bookName:"java编程思想",
+                    borNum:1,
+                    sumNum:2
+                },
+                {
+                    bookId:'456',
+                    bookName:"数据结构",
+                    borNum:2,
+                    sumNum:5
+                },
+                {
+                    bookId:'789',
+                    bookName:"IBM-ICPC汇编",
+                    borNum:5,
+                    sumNum:8
+                },
+                {
+                    bookId:'891',
+                    bookName:"科学计算与数学建模",
+                    borNum:1,
+                    sumNum:1
+                }
+            ],
+            //记录页面
+            page: {
+                first: 1 - 1,
+                last: 10 + 1,
+                now: 0
+            },
+            //记录按钮样式
+            style: {
+                s1: true,
+                s2: false,
+                s3: false,
+                s4: false,
+                s5: false
+            },
+            //当前页面
+            index: 0,
+
+        },
+        beforeCreate: function () {
+            // let WEB_ROOT = '<?php echo WEB_ROOT?>';
+            // this.$http.post(WEB_ROOT + 'index/stuff/getInfo.html', {}).then(
+            //   function (res) {
+            //     if (res.data.status !== true) {
+            //       toastr.error(res.data.message);
+            //     } else {
+            //       this.stuffAll = res.data.data;
+            //       console.log(this.stuffAll);
+            //     }
+            //   }, function () {
+            //     toastr.warning("网络异常,请稍后再试");
+            //   }
+            // )
+        },
+        methods: {
+            getTime: function () {
+                this.time = (new Date()).valueOf();
+                setTimeout(this.getTime, 5000);
+            },
+            //重置样式
+            re: function () {
+                this.style.s1 = false;
+                this.style.s2 = false;
+                this.style.s3 = false;
+                this.style.s4 = false;
+                this.style.s5 = false;
+            },
+            //更新换页样式
+            updateStyle: function () {
+                this.re();
+                switch ((this.page.now - this.index)) {
+                    case 1:
+                        this.style.s1 = true;
+                        break;
+                    case 2:
+                        this.style.s2 = true;
+                        break;
+                    case 3:
+                        this.style.s3 = true;
+                        break;
+                    case 4:
+                        this.style.s4 = true;
+                        break;
+                    case 5:
+                        this.style.s5 = true;
+                        break;
+                }
+            },
+            //更新当前页
+            updatePage: function (nowPage) {
+                this.page.now = nowPage;
+                this.page.first = (nowPage - 1) * 10;
+                this.page.last = nowPage * 10 + 1;
+                if (this.page.last > this.stuffAll.length) {
+                    this.page.last = this.stuffAll.length + 1;
+                }
+                this.updateStyle();
+            },
+            //下一页
+            nextPage: function () {
+                if (this.index + 5 < this.stuffAll.length / 10) {
+                    this.index++;
+                    this.updateStyle();
+                }
+            },
+            // 上一页
+            lastPage: function () {
+                if (this.index > 0) {
+                    this.index--;
+                    this.updateStyle();
+                }
+            },
+            updateBorrowLog(bookId){
+                this.$http.post(WEB_ROOT + 'index/stuff/getInfo.html', {
+
+                }).then(
+                    function (res) {
+                        if (res.data.status !== true) {
+                            toastr.error(res.data.message);
+                        } else {
+                            this.borrowLog = res.data.data;
+                        }
+                    }, function () {
+                        toastr.warning("网络异常,请稍后再试");
+                    }
+                )
+            },
+            updateBorrowInfo(bookId, bookName){
+                // console.log("nihao");
+                this.borrowInfo.bookId = bookId;
+                this.borrowInfo.reader = 'me';
+                this.borrowInfo.bookName = bookName;
+                let nowTime = new Date().getFullYear() + "/" + ( new Date().getMonth() + 1) + "/" + new Date().getDate();
+                this.borrowInfo.borrowDate = nowTime;
+            },
+            borrowBook: function () {
+                swal({
+                    title: '确定借书吗?',
+                    text: '你将无法回复它!',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: '确定借书!',
+                }).then(() => {
+                    this.$http.post(WEB_ROOT + 'index/stuff/delete.html', {
+                        bookId:bookId
+                    }).then(
+                        function (res) {
+                            if (res.data.status !== true) {
+                                toastr.error(res.data.message)
+                            } else {
+                                swal(
+                                    '借书!',
+                                    '结束成功。',
+                                    'success'
+                                );
+                            }
+                        }
+                    )
+                })
+            },
+            returnBook(bookId) {
+                swal({
+                    title: '确定还书吗?',
+                    text: '你将无法回复它!',
+                    type: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    confirmButtonText: '确定还书!',
+                }).then(() => {
+                    this.$http.post(WEB_ROOT + 'index/stuff/delete.html', {
+
+                    }).then(
+                        function (res) {
+                            if (res.data.status !== true) {
+                                toastr.error(res.data.message)
+                            } else {
+                                swal(
+                                    '还书!',
+                                    '还书成功。',
+                                    'success'
+                                );
+                            }
+
+                        }
+                    )
+                })
+            },
+            search_() {
+            }
+        }
+    });
+
+</script>
+
+
+</body>
+
+</html>
