@@ -13,7 +13,7 @@ use think\Config;
 use think\Controller;
 use think\Exception;
 use think\Request;
-use app\user\model\UserInfo;
+use app\main\model\UserInfo;
 
 class wx extends Controller
 {
