@@ -1,0 +1,16 @@
+/* pages/recruit/new_recruit/new_recruit.wxss */
+page{
+    padding-top: 3vh;
+}
+.main-form{
+    margin-top: 5vh;
+}
+.panel{
+    background-color: #f5f5f5;
+}
+.grid-wrapper{
+    width: 750rpx;
+}
+.gridItemSelected{
+    background-color: #5cadff;
+}

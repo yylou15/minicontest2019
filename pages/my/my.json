@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "RadioGroup" : "/dist/radio-group/index",
+    "Radio": "/dist/radio/index"
+  }
+}

@@ -1,0 +1,18 @@
+
+<!--<i-row>-->
+    <!--<i-col span="18" offset="3" i-class="col-class">-->
+        <i-panel title="选择身份">
+            <i-radio-group current="{{current}}" bindchange="handleRadioChange">
+                <i-radio wx:for="{{options}}" position="left" wx:key="{{item.id}}" value="{{item.name}}">
+                </i-radio>
+            </i-radio-group>
+        </i-panel>
+
+    <!--</i-col>-->
+<!--</i-row>-->
+
+<i-button bind:click="handleButtonClick"
+          type="primary"
+          loading="{{isLoading}}">
+    {{ buttonText }}
+</i-button>

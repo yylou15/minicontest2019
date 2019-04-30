@@ -1,0 +1,32 @@
+{
+  "pages":[
+    "pages/recruit/recruit",
+    "pages/recruit/new_recruit/new_recruit",
+    "pages/my/my"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar":{
+    "color": "#a9b7b7",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "list":[
+      {
+        "iconPath": "/imgs/TabbarIcon/icon_new_recruit.png",
+        "selectedIconPath": "/imgs/TabbarIcon/icon_new_recruit_fil.png",
+        "text": "招新",
+        "pagePath": "pages/recruit/recruit"
+      },
+      {
+        "iconPath": "/imgs/TabbarIcon/my.png",
+        "selectedIconPath": "/imgs/TabbarIcon/my_fill.png",
+        "text": "我的",
+        "pagePath": "pages/my/my"
+      }
+    ]
+  }
+}
