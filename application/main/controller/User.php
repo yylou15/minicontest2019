@@ -2,9 +2,9 @@
 
 namespace app\main\controller;
 
+use app\main\model\Organizations;
 use think\Controller;
 use think\Exception;
-use think\exception\DbException;
 use think\Request;
 use app\main\model\UserInfo as UserModel;
 
@@ -53,6 +53,20 @@ class User extends Controller
      * */
 
     public function registerAdminAccount(Request $request){
+        $uid = $request->post('uid');
+        $orgName = $request->post('organizationName');
+        $belongSchool = $request->post('belongSchoolId');
+//        $postImage = $request->file('postImage');
+
+        $newoOrganization = new Organizations();
+        $newoOrganization->name = $orgName;
+        $newoOrganization->school_id = $belongSchool;
+        $newoOrganization->creator_id = $uid;
+        $newoOrganization->save();
+        return json([
+            'status' => true,
+            'code' => $newoOrganization->oid .''.random_int(1000,9999)
+        ]);
 
     }
 }
