@@ -98,7 +98,7 @@ border: none
 }
 .other{
   color:  #888888;
-  margin-top: 29rpx;
+  margin-top: 35rpx;
   font-size: 25rpx;
   font-family: '黑体';
 }
