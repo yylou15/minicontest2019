@@ -1,0 +1,61 @@
+/* pages/index/index.wxss */
+@import '../../style/wel-font.wxss';
+page, .page, .page__bd {
+  height: 100%;
+  font-family: '黑体';
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eeece8
+}
+.new-log{
+  height: 100rpx;
+  border-radius: 25rpx;
+  margin-top: 35rpx;
+  width: 450rpx;
+  background-color: #43adef;
+  color: #fff8e3;
+  font-size: 40rpx;
+  text-align: center;
+  vertical-align: middle;
+   box-shadow: 0rpx 0rpx 9rpx #888888;
+}
+.cap-log{
+ height: 100rpx;
+  border-radius: 25rpx;
+  margin-top: 40rpx;
+  width: 450rpx;
+  background-color: #f8f6f0;
+  color: #43adef;
+  font-size: 40rpx;
+  text-align: center;
+  vertical-align: middle;
+  box-shadow: 0rpx 0rpx 9rpx #888888;
+}
+.mid{
+  vertical-align: middle;
+}
+
+.logo{
+  margin-top: 50rpx;
+}
+.welcome{
+  font-family: 'MarkerFeltWide';
+  font-size: 50rpx;
+  margin-top: -20rpx;
+  padding-top: 0;
+  margin-bottom: 25rpx;
+  color: #4e5c72;
+}
+.logo-bottom{
+  opacity: 0.5;
+  width: 100%;
+}
+.help{
+  font-family: '黑体';
+  position: absolute;
+  z-index: 10;
+  bottom: 34rpx;
+  font-size: 25rpx;
+}

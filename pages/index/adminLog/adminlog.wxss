@@ -1,0 +1,14 @@
+/* pages/index/adminLog/adminlog.wxss */
+page, .page, .page__bd {
+  height: 100%;
+  font-family: '黑体';
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eeece8
+}
+.logo-bottom{
+  opacity: 0.5;
+  width: 100%;
+}

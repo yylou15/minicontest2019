@@ -1,0 +1,6 @@
+<!--pages/index/adminLog/adminlog.wxml-->
+<view class='page'>
+
+</view>
+<image class="logo-bottom" src='../../../imgs/house.png'></image>
+

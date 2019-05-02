@@ -1,14 +1,16 @@
 {
   "pages": [
+    "pages/index/adminLog/adminlog",
+    "pages/index/index",
     "pages/recruit/recruit",
     "pages/recruit/new_recruit/new_recruit",
     "pages/my/my"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarBackgroundColor": "#43adef",
+    "navigationBarTitleText": "萌新方便面",
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#a9b7b7",

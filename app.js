@@ -1,7 +1,7 @@
 //app.js
 App({
     data:{
-      root:'http://mini.test.com/'
+      root:'https://mini.lou-yy.com/'
     },
     onLaunch: function () {
       // 展示本地存储能力
