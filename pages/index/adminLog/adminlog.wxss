@@ -31,7 +31,7 @@ height: 367.8rpx;
 width: 520rpx;
 box-shadow: 0rpx 0rpx 1rpx #888888;
 padding: 0;
-margin-top: 30rpx;
+margin-top: 50rpx;
 vertical-align: middle;
 } 
 .inputView2 { 
