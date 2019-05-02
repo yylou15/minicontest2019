@@ -1,6 +1,18 @@
 <!--pages/index/adminLog/adminlog.wxml-->
 <view class='page'>
-
+<image class="logo" src='../../../imgs/painter.png'></image>
+<view class="inputView"> 
+  <image class="nameImage" src="../../../imgs/user.png"></image> 
+  <input class="inputText" placeholder="请输入账号" bindinput="" /> 
+ </view> 
+<view class="inputView2"> 
+  <image class="nameImage" src="../../../imgs/password.png"></image> 
+  <input class="inputText" placeholder="请输入密码" bindinput="" password="true"/> 
+ </view> 
+ <view class='other'><label class='blue'>忘记密码</label>   |   <label class='blue'>立即注册</label></view>
+ <view class="loginBtnView"> 
+  <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="">登录</button> 
+ </view>  
 </view>
 <image class="logo-bottom" src='../../../imgs/house.png'></image>
 

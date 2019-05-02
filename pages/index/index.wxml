@@ -1,7 +1,7 @@
 <!--pages/index/index.wxml-->
 <view class='page'>
 
-<image class="logo" src='../../imgs/painter.png'></image>
+<image class="logo" src='../../imgs/noodle.png'></image>
 <view class='welcome'>WELCOME</view>
 
 <button class='new-log' bindtap='baoming'>我是萌新</button>
