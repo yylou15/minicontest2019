@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/index/adminRigister/adminregister",
     "pages/index/adminLog/adminlog",
     "pages/index/index",
     "pages/recruit/recruit",
@@ -20,7 +21,7 @@
       {
         "iconPath": "/imgs/TabbarIcon/icon_new_recruit.png",
         "selectedIconPath": "/imgs/TabbarIcon/icon_new_recruit_fil.png",
-        "text": "招新aa2123312",
+        "text": "招新",
         "pagePath": "pages/recruit/recruit"
       },
       {
