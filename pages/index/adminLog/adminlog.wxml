@@ -5,7 +5,7 @@
   <image class="nameImage" src="../../../imgs/user.png"></image> 
   <input class="inputText" placeholder="请输入登陆码" bindinput="" /> 
  </view>  
- <view class='other'><label class='blue'>忘记登录码</label>   |   <label class='blue'>立即注册</label></view>
+ <view class='other'><label class='blue'>忘记登录码</label>   |   <label class='blue' bindtap='register'>立即注册</label></view>
  <view class="loginBtnView"> 
   <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="">登录</button> 
  </view>  

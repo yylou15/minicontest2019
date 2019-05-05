@@ -1,24 +1,27 @@
 <!--pages/index/adminRigister/adminregister.wxml-->
 <view class='page'>
-<image class="logo" src='../../../imgs/painter.png'></image>
+
 	<view class="cu-form-group margin-top " id="academy">
-		<view class="title">所属大学</view>
-		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}">
+   <image class="nameImage" src="../../../imgs/school.png"></image> 
+		<view class="title">所属学校</view>
+		<picker bindchange="PickerChange" value="{{index}}" range="{{picker}}" range-key="name">
 			<view class="picker">
-				{{index?picker[index]:'选择大学'}}
+				{{index?picker[index].name:'选择大学'}}
 			</view>
 		</picker>
 	</view>
-  	<view class="cu-form-group" id='name'>
+  	<view class="cu-form-group margin-top" id='name'>
+    <image class="nameImage" src="../../../imgs/aca.png"></image> 
 		<view class="title">协会名称</view>
-		<input placeholder="请输入协会名称" class='inp'></input>
+		<input placeholder="请输入协会名称" class='inp' bindchange="orgnizeChange"></input>
 	</view>
-    	<view class="cu-form-group" id='email'>
+    	<view class="cu-form-group margin-top" id='email'>
+       <image class="nameImage" src="../../../imgs/email.png"></image> 
 		<view class="title">申请邮箱</view>
-		<input placeholder="请输入邮箱" class='inp'></input>
+		<input placeholder="请输入邮箱" class='inp' bindchange="emailChange"></input>
 	</view>
   <view class="loginBtnView"> 
-  <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="">注册</button> 
+  <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}"  bindtap="registerSubmit">注册</button> 
  </view> 
 </view>
 <image class="logo-bottom" src='../../../imgs/house.png'></image>

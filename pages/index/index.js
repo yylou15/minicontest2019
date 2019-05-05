@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+ 
 
   },
 
@@ -61,6 +62,16 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+
+  },
+  /**
+   * 部长跳转
+   */
+  isadmin:function(e){
+    var url = "/pages/index/adminLog/adminlog"
+    wx.navigateTo({
+      url: url,
+    })
 
   }
 })

@@ -1,0 +1,43 @@
+<!--pages/admin/index.wxml-->
+
+ <view class='page'>
+ <view class='blue-back blue'></view>
+ <view class='blue'>
+ <open-data type="userAvatarUrl" class="userinfo" id="userinfo"></open-data>
+  <view class='text-xl'>
+    <open-data type="userNickName" lang="zh_CN"></open-data>    
+ </view>
+  </view>
+  <view class="padding flex text-center text-grey bg-white  blo">
+    <view class="flex flex-sub flex-direction solid-right">
+      <view class="text-xxl text-orange">15</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-attentionfill"></text> View</view>
+    </view>
+    <view class="flex flex-sub flex-direction solid-left">
+      <view class="text-xxl text-green">20</view>
+      <view class="margin-top-sm">
+        <text class="cuIcon-fork"></text> Fork</view>
+    </view>
+  </view>
+   
+</view>
+
+
+
+<view class="cu-bar tabbar margin-bottom-xl bg-white" id='tab'>
+    <view class="action text-gray">
+      <view class="cuIcon-homefill"></view> 首页
+    </view>
+     <view class="action text-gray">
+      <view class="cuIcon-sort"></view> 招新
+    </view>
+    
+   
+    <view class="action text-blue">
+      <view class="cuIcon-my">
+        <view class=" badge"></view>
+      </view>
+      我的
+    </view>
+  </view>

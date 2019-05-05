@@ -1,0 +1,19 @@
+<!--pages/admin/index.wxml-->
+<view class='page'></view>
+<view class="cu-bar tabbar margin-bottom-xl bg-white" id='tab'>
+    <view class="action text-blue">
+      <view class="cuIcon-homefill"></view> 首页
+    </view>
+   
+    <view class="action text-gray add-action">
+      <button class="cu-btn cuIcon-add bg-blue shadow"></button>
+      发布
+    </view>
+   
+    <view class="action text-gray">
+      <view class="cuIcon-my">
+        <view class=" badge"></view>
+      </view>
+      我的
+    </view>
+  </view>

@@ -1,11 +1,14 @@
 {
   "pages": [
-    "pages/index/adminRigister/adminregister",
-    "pages/index/adminLog/adminlog",
+    "pages/rookie/me/index",
+    "pages/admin/index",
     "pages/index/index",
+    "pages/index/adminLog/adminlog",
+    "pages/index/adminRigister/adminregister",
     "pages/recruit/recruit",
     "pages/recruit/new_recruit/new_recruit",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/index/logcode/code"
   ],
   "window": {
     "backgroundTextStyle": "light",

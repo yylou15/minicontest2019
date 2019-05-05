@@ -1,17 +1,17 @@
-// pages/index/adminLog/adminlog.js
+// pages/admin/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    current: 'homepage'
   },
-  register: function (e) {
-    var url = "/pages/index/adminRigister/adminregister"
-    wx.navigateTo({
-      url: url,
-    })
+
+  handleChange({ detail }) {
+    this.setData({
+      current: detail.key
+    });
   },
 
   /**

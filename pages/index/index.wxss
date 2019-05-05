@@ -35,15 +35,19 @@ page, .page, .page__bd {
 }
 .mid{
   vertical-align: middle;
+  
 }
 
 .logo{
-  margin-top: 50rpx;
+  margin-top: 100rpx;
+  height: 284rpx;
+  width: 323.5rpx;
+  
 }
 .welcome{
   font-family: 'MarkerFeltWide';
   font-size: 50rpx;
-  margin-top: -20rpx;
+  margin-top: 20rpx;
   padding-top: 0;
   margin-bottom: 25rpx;
   color: #4e5c72;

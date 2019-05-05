@@ -1,24 +1,22 @@
-// pages/index/adminLog/adminlog.js
+// pages/index/logcode/code.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
-  },
-  register: function (e) {
-    var url = "/pages/index/adminRigister/adminregister"
-    wx.navigateTo({
-      url: url,
-    })
+    code:""
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    var co=options.code;
+    that.setData({
+      code:co
+    })
   },
 
   /**

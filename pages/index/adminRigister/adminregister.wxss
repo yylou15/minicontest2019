@@ -8,8 +8,19 @@ page, .page, .page__bd {
   align-items: center;
   background-color: #eeece8
 }
-#academy,#name,#email{
-  width: 600rpx
+#academy{
+  margin-top: 300rpx;
+    width: 550rpx;
+  border-radius: 30rpx;
+   background-color: #eeece8; 
+ border: 2rpx solid gainsboro;
+}
+
+#name,#email{
+  width: 550rpx;
+  border-radius: 30rpx;
+   background-color: #eeece8; 
+ border: 2rpx solid gainsboro;
 }
 .inp{
   text-align: right
@@ -32,9 +43,15 @@ height: 367.8rpx;
 .loginBtn { 
  width: 100%; 
  margin-top: 35rpx; 
-border-radius: 30rpx;
+border-radius: 45rpx;
 box-shadow: 6rpx 5rpx 15rpx #888888;
 background-color: #43adef;
 color: whitesmoke;
 border: none
 }
+.nameImage, .keyImage { 
+ margin-left: -10rpx; 
+ margin-right: 10rpx;
+ width: 30rpx; 
+ height: 30rpx
+} 

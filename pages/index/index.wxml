@@ -1,11 +1,11 @@
 <!--pages/index/index.wxml-->
 <view class='page'>
 
-<image class="logo" src='../../imgs/noodle.png'></image>
+<image class="logo" src='../../imgs/noodle3.png'></image>
 <view class='welcome'>WELCOME</view>
 
 <button class='new-log' bindtap='baoming'>我是萌新</button>
-<button class='cap-log' bindtap='baoming'>我是部长</button>
+<button class='cap-log' bindtap='isadmin'>我是部长</button>
 <!-- <image class="logo-bottom" src='../../imgs/house.png'></image> -->
 
 </view>
