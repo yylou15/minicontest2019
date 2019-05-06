@@ -73,5 +73,11 @@ Page({
       url: url,
     })
 
+  },
+  isrookie(e){
+    var url = "/pages/rookie/me/index"
+    wx.navigateTo({
+      url: url,
+    })
   }
 })

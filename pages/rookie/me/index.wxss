@@ -104,11 +104,11 @@ z-index: +1
     height: 160rpx;
     border-radius: 50%;
     overflow: hidden;
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.5);
     position: absolute;z-index: 999;
     top: 100rpx;right: 80rpx;
-    border: 2px solid #eee;
-    padding: 2rpx; 
+    /* border: 2px solid #eee; */
+    padding: 4rpx; 
     
 }
 .avatarWave{
@@ -120,6 +120,7 @@ z-index: +1
     top: 100rpx;right: 80rpx;
     position: absolute;z-index: 998;
 }
+
 .userinfo-avatar{
     z-index: 999;
     width: 100%;
@@ -157,7 +158,7 @@ z-index: +1
   margin-left: 30rpx;
 }
 .logout{
-  margin-top: 40rpx;
+  margin-top: 70rpx;
   background-color:white;
   color: gray;
   width: 350rpx;
