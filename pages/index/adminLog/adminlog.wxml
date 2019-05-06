@@ -3,11 +3,11 @@
 <image class="logo" src='../../../imgs/painter.png'></image>
 <view class="inputView"> 
   <image class="nameImage" src="../../../imgs/user.png"></image> 
-  <input class="inputText" placeholder="请输入登陆码" value='{{code}}' bindinput="" /> 
+  <input class="inputText" placeholder="请输入登陆码" value='{{code}}' bindinput="getCode" /> 
  </view>  
  <view class='other'><label class='blue'>忘记登录码</label>   |   <label class='blue' bindtap='register'>立即注册</label></view>
  <view class="loginBtnView"> 
-  <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="">登录</button> 
+  <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login">登录</button> 
  </view>  
 </view>
 <image class="logo-bottom" src='../../../imgs/house.png'></image>
