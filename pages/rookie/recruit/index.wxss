@@ -1,0 +1,16 @@
+/* pages/rookie/recruit/index.wxss */
+page, .page, .page__bd {
+  height: 100%;
+  font-family: '黑体';
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eeece8;
+  overflow: hidden
+}  
+#tab{
+  width:750rpx;
+  position:fixed;
+  bottom:-50rpx
+}

@@ -1,30 +1,17 @@
-// pages/index/adminLog/adminlog.js
+// pages/rookie/recruit/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-      code:""
-  },
-  register: function (e) {
-    var url = "/pages/index/adminRigister/adminregister"
-    wx.navigateTo({
-      url: url,
-    })
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this;
-    var a=wx.getStorageSync('code');
-    if(a){
-      that.setData({
-        code: a
-      })
-    }
 
   },
 

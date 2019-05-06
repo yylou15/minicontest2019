@@ -1,6 +1,5 @@
 {
   "usingComponents": {
-    "i-avatar": "../../../dist/avatar/index",
-    "van-field":"../../../lib/field/index"
+    "i-avatar": "../../../dist/avatar/index"
   }
 }

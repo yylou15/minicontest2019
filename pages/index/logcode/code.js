@@ -14,6 +14,7 @@ Page({
   onLoad: function (options) {
     var that = this;
     var co=options.code;
+    wx.setStorageSync('code', co)
     that.setData({
       code:co
     })

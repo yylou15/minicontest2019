@@ -5,61 +5,47 @@ Page({
    * 页面的初始数据
    */
   data: {
+
+  },
+  onLoad: function (options) {
+    wx.setNavigationBarTitle({
+      title: '我的'  //修改title
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
+  onShow: function (options) {
+    this.startAnimation();
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  startAnimation: function () {
+    let next = true;
+    setInterval(function () {
+      if (next) {
+        //导出动画数据传递给组件的animation属性。
+        this.setData({
+          waveAnimation: wx.createAnimation({
+            duration: 2000,
+            timingFunction: "linear",
+            delay: 0,
+            transformOrigin: "50% 50%",
+          }).scale(2).opacity(0).step().export(),
+        })
+        next = !next;
+      } else {
+        //导出动画数据传递给组件的animation属性。
+        this.setData({
+          waveAnimation: wx.createAnimation({
+            duration: 1,
+            timingFunction: "linear",
+            delay: 0,
+            transformOrigin: "50% 50%",
+          }).scale(1).opacity(1).step().export(),
+        })
+        next = !next;
+      }
+    }.bind(this), 2000)
   }
+
 })

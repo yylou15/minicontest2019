@@ -702,7 +702,7 @@ radio.white[checked] .wx-radio-input {
 }
 
 .cu-btn:not([class*="bg-"]) {
-	background-color: #f0f0f0;
+	/* background-color: #f0f0f0; */
 }
 
 .cu-btn[class*="line"] {
@@ -1340,7 +1340,7 @@ button.icon.lg {
 	display: flex;
 	padding: 0 30rpx;
 	min-height: 100rpx;
-	background-color: var(--white);
+	/* background-color: var(--white); */
 	justify-content: space-between;
 	align-items: center
 }
@@ -1502,7 +1502,7 @@ button.icon.lg {
 }
 
 .cu-list.grid {
-	background-color: var(--white);
+	/* background-color: var(--white); */
 	text-align: center
 }
 
