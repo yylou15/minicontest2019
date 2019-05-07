@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/rookie/index/index",
     "pages/rookie/me/index",
     "pages/rookie/recruit/index",
     "pages/admin/index",
@@ -10,7 +11,7 @@
     "pages/recruit/new_recruit/new_recruit",
     "pages/my/my",
     "pages/index/logcode/code",
-    "pages/rookie/index/index"
+    "pages/rookie/index"
   ],
   "window": {
     "backgroundTextStyle": "light",

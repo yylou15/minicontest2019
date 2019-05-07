@@ -23,7 +23,7 @@ Page({
     that.setData({
       code: val
     });
-    wx.setStorageSync('code', val);
+   
 
   },
   login:function(e){
@@ -43,6 +43,7 @@ Page({
             icon: 'success',
             duration: 1500,
             success: function () {
+              wx.setStorageSync('code', code);
               setTimeout(function () {
                 // wx.redirectTo({
                 //   url: '/pages/index/logcode/code?code=' + code,

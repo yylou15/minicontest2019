@@ -1,5 +1,5 @@
 <!--pages/rookie/recruit/index.wxml-->
-<view class="cu-bar tabbar margin-bottom-xl bg-white" id='tab'>
+<!-- <view class="cu-bar tabbar margin-bottom-xl bg-white" id='tab'>
     <view class="action text-gray">
       <view class="cuIcon-homefill"></view> 首页
     </view>
@@ -12,5 +12,5 @@
       </view>
       我的
     </view>
-  </view>
+  </view> -->
 

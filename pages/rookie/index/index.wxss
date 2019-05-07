@@ -14,3 +14,12 @@ page, .page, .page__bd {
   position:fixed;
   bottom:-50rpx
 }
+.tower-swiper .tower-item {
+		transform: scale(calc(0.5 + var(--index) / 10));
+		margin-left: calc(var(--left) * 100rpx - 150rpx);
+		z-index: var(--index);
+	}
+.all-width{
+  width: 750rpx;
+}
+  

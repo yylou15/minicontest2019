@@ -1,12 +1,16 @@
-// pages/index/index.js
+// pages/rookie/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
- 
-
+    PageCur: 'index'
+  },
+  NavChange(e) {
+    this.setData({
+      PageCur: e.currentTarget.dataset.cur
+    })
   },
 
   /**
@@ -63,21 +67,5 @@ Page({
    */
   onShareAppMessage: function () {
 
-  },
-  /**
-   * 部长跳转
-   */
-  isadmin:function(e){
-    var url = "/pages/index/adminLog/adminlog"
-    wx.navigateTo({
-      url: url,
-    })
-
-  },
-  isrookie(e){
-    var url = "/pages/rookie/index"
-    wx.redirectTo({
-      url: url,
-    })
   }
 })

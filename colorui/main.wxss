@@ -1482,7 +1482,7 @@ button.icon.lg {
 .cu-list.grid>.cu-item text {
 	display: block;
 	margin-top: 10rpx;
-	color: #888;
+	color: black;
 	font-size: 26rpx;
 	line-height: 40rpx
 }

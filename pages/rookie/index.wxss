@@ -1,3 +1,29 @@
+/* pages/rookie/index.wxss */
+@import "/colorui/main.wxss";
+@import "/colorui/icon.wxss";
+page, .page, .page__bd {
+  height: 100%;
+  font-family: '黑体';
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #eeece8;
+  overflow: hidden
+}  
+#tab{
+  width:750rpx;
+  position:fixed;
+  bottom:-50rpx
+}
+.tower-swiper .tower-item {
+		transform: scale(calc(0.5 + var(--index) / 10));
+		margin-left: calc(var(--left) * 100rpx - 150rpx);
+		z-index: var(--index);
+	}
+.all-width{
+  width: 750rpx;
+}
 /* pages/admin/index.wxss */
 .logo{
   margin-top: 80rpx;
@@ -162,4 +188,4 @@ z-index: +1
   background-color:white;
   color: gray;
   width: 350rpx;
-}
+}  

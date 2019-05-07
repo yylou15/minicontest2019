@@ -1,16 +1,25 @@
 <!--pages/rookie/index/index.wxml-->
-
-<view class="cu-bar tabbar margin-bottom-xl bg-white" id='tab'>
-    <view class="action text-blue">
+<view class='page'>
+<swiper class="card-swiper round-dot all-width" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+</view>
+<!-- <view class="cu-bar tabbar margin-bottom-xl bg-white" id='tab' >
+    <view class="action text-blue" bindtap='switch_rookie_index'>
       <view class="cuIcon-homefill"></view> 首页
     </view>
-     <view class="action text-gray">
+     <view class="action text-gray" bindtap='switch_rookie_recruit'>
       <view class="cuIcon-sort"></view> 招新
     </view>
-    <view class="action text-gray">
+    <view class="action text-gray" bindtap='switch_rookie_me'>
       <view class="cuIcon-my">
         <view class=" badge"></view>
       </view>
       我的
     </view>
-  </view>
+  </view> -->
