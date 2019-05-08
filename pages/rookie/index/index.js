@@ -1,5 +1,5 @@
 // pages/rookie/index/index.js
-Page({
+Component({
   data: {
     cardCur: 0,
     swiperList: [{

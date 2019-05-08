@@ -9,11 +9,11 @@ page, .page, .page__bd {
   background-color: #eeece8;
   overflow: hidden
 }  
-#tab{
+/* #tab{
   width:750rpx;
   position:fixed;
   bottom:-50rpx
-}
+} */
 .tower-swiper .tower-item {
 		transform: scale(calc(0.5 + var(--index) / 10));
 		margin-left: calc(var(--left) * 100rpx - 150rpx);

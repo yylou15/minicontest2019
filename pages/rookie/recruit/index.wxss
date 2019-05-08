@@ -9,8 +9,8 @@ page, .page, .page__bd {
   background-color: #eeece8;
   overflow: hidden
 }  
-#tab{
+/* #tab{
   width:750rpx;
   position:fixed;
   bottom:-50rpx
-}
+} */

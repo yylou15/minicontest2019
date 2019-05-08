@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    PageCur: 'index'
+    PageCur: 'me'
   },
   NavChange(e) {
     this.setData({

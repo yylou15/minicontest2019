@@ -1,4 +1,6 @@
 /* pages/admin/index.wxss */
+/* @import "/colorui/main.wxss";
+@import "/colorui/icon.wxss"; */
 .logo{
   margin-top: 80rpx;
   width: 528rpx;
@@ -13,7 +15,7 @@
  flex: auto; 
  height:100%; 
 } 
-page, .page, .page__bd {
+.page, .page__bd {
   height: 100%;
   font-family: '黑体';
   text-align: center;
@@ -23,12 +25,12 @@ page, .page, .page__bd {
   background-color: #eeece8;
   overflow: hidden
 }  
-#tab{
+/* #tab{
   width:750rpx;
   position:fixed;
   bottom:-50rpx
-}
-#userinfo{
+} */
+.userinfo{
   width: 185rpx;
   height:185rpx;
   margin-top: 40rpx;
