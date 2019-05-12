@@ -7,10 +7,27 @@ page, .page, .page__bd {
   flex-direction: column;
   align-items: center;
   background-color: #eeece8;
-  overflow: hidden
 }  
-#tab{
+ #tab{
   width:750rpx;
   position:fixed;
   bottom:-50rpx
+} 
+.tower-swiper .tower-item {
+		transform: scale(calc(0.5 + var(--index) / 10));
+		margin-left: calc(var(--left) * 100rpx - 150rpx);
+		z-index: var(--index);
+	}
+.all-width{
+  width: 750rpx;
+  margin-top:70rpx;
 }
+.all-width2{
+  width: 730rpx;
+  margin-bottom:20rpx;
+  border-radius: 40rpx;
+}
+.search{
+  text-align: left;
+}
+  

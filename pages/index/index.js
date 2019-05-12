@@ -75,8 +75,8 @@ Page({
 
   },
   isrookie(e){
-    var url = "/pages/rookie/me/index"
-    wx.navigateTo({
+    var url = "/pages/rookie/index"
+    wx.redirectTo({
       url: url,
     })
   }

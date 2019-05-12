@@ -1,7 +1,8 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/rookie/index/index",
     "pages/rookie/me/index",
+    "pages/index/index",
     "pages/rookie/recruit/index",
     "pages/admin/index",
     "pages/index/adminLog/adminlog",
@@ -9,8 +10,7 @@
     "pages/recruit/recruit",
     "pages/recruit/new_recruit/new_recruit",
     "pages/my/my",
-    "pages/index/logcode/code",
-    "pages/rookie/index/index"
+    "pages/index/logcode/code"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -19,21 +19,27 @@
     "navigationBarTextStyle": "white"
   },
   "tabBar": {
-    "color": "#a9b7b7",
-    "selectedColor": "#1296db",
+    "color": "#8799a3",
+    "selectedColor": "#43adef",
     "borderStyle": "black",
     "list": [
       {
-        "iconPath": "/imgs/TabbarIcon/icon_new_recruit.png",
-        "selectedIconPath": "/imgs/TabbarIcon/icon_new_recruit_fil.png",
+        "iconPath": "/imgs/TabbarIcon/me.png",
+        "selectedIconPath": "/imgs/TabbarIcon/my_fill.png",
         "text": "招新",
-        "pagePath": "pages/recruit/recruit"
+        "pagePath": "pages/rookie/index/index"
       },
       {
         "iconPath": "/imgs/TabbarIcon/my.png",
         "selectedIconPath": "/imgs/TabbarIcon/my_fill.png",
         "text": "我的",
-        "pagePath": "pages/my/my"
+        "pagePath": "pages/rookie/recruit/index"
+      },
+      {
+        "iconPath": "/imgs/TabbarIcon/me.png",
+        "selectedIconPath": "/imgs/TabbarIcon/my_fill.png",
+        "text": "我的",
+        "pagePath": "pages/rookie/me/index"
       }
     ]
   },

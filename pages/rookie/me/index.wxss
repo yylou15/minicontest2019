@@ -1,4 +1,6 @@
 /* pages/admin/index.wxss */
+/* @import "/colorui/main.wxss";
+@import "/colorui/icon.wxss";  */
 .logo{
   margin-top: 80rpx;
   width: 528rpx;
@@ -13,7 +15,7 @@
  flex: auto; 
  height:100%; 
 } 
-page, .page, .page__bd {
+.page, page,.page__bd {
   height: 100%;
   font-family: '黑体';
   text-align: center;
@@ -27,8 +29,8 @@ page, .page, .page__bd {
   width:750rpx;
   position:fixed;
   bottom:-50rpx
-}
-#userinfo{
+} 
+.userinfo{
   width: 185rpx;
   height:185rpx;
   margin-top: 40rpx;
@@ -158,7 +160,7 @@ z-index: +1
   margin-left: 30rpx;
 }
 .logout{
-  margin-top: 70rpx;
+  margin-top: 90rpx;
   background-color:white;
   color: gray;
   width: 350rpx;

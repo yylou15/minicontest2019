@@ -1,16 +1,12 @@
-<!--pages/rookie/recruit/index.wxml-->
-<view class="cu-bar tabbar margin-bottom-xl bg-white" id='tab'>
-    <view class="action text-gray">
-      <view class="cuIcon-homefill"></view> 首页
+<!-- <i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg" >
+    <view slot="content">内容不错</view>
+    <view slot="footer">尾部内容</view>
+</i-card> -->
+<view class='signup'>
+ <view class="cu-avatar xl round touxiang" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);"></view>
+<view class='cont'>
+ <view class="title">
+      <view class="text-cut title text-blue text-bold" style='font-size:30rpx;'>中南大学学生会</view>
     </view>
-     <view class="action text-blue">
-      <view class="cuIcon-sort"></view> 招新
-    </view>
-    <view class="action text-gray">
-      <view class="cuIcon-my">
-        <view class=" badge"></view>
-      </view>
-      我的
-    </view>
-  </view>
-
+   <view class="simpleinro">欢迎加入学生会！加入校学生会，一起C位出道！</view></view>
+</view>
