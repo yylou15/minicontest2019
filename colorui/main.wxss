@@ -2243,7 +2243,7 @@ button.icon.lg {
 
 .cu-card.no-card>.cu-item {
 	margin: 0rpx;
-	border-radius: 0rpx;
+	border-radius: 30rpx;
 }
 
 .cu-card .grid.grid-square {

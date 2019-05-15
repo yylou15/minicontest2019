@@ -35,6 +35,7 @@ Page({
   onLoad() {
     this.towerSwiper('swiperList');
     // 初始化towerSwiper 传已有的数组名即可
+    
   },
   DotStyle(e) {
     this.setData({

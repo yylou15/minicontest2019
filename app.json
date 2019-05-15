@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/cap/me/index",
     "pages/rookie/index/index",
     "pages/rookie/me/index",
     "pages/index/index",

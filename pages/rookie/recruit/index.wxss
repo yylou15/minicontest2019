@@ -37,14 +37,33 @@ align-items:center;
 .title{
   text-align: left;
   margin-bottom: 5rpx;
+  display: flex;
 
 }
 .simpleinro{
 text-align: left;
 font-size:25rpx;
 color:#888;
+width: 380rpx;
 
 }
 .cont{
   display: block
+}
+.time{
+  text-align: left;
+  
+  margin-top: 18rpx;
+ /* margin-left: -150rpx; */
+  font-size:20rpx;
+  color:#888;
+
+}
+.tag{
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 20rpx;
+  font-size: 20rpx;
+   /* position: absolute;*/
+   margin-left: 130rpx; 
 }

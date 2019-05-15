@@ -6,7 +6,12 @@
  <view class="cu-avatar xl round touxiang" style="background-image:url(https://ossweb-img.qq.com/images/lol/web201310/skin/big99008.jpg);"></view>
 <view class='cont'>
  <view class="title">
-      <view class="text-cut title text-blue text-bold" style='font-size:30rpx;'>中南大学学生会</view>
+      <view class="text-cut title text-blue text-bold" style='font-size:32rpx;'>中南大学学生会</view>
+        <view class="cu-tag bg-red light tag">火</view>
+        <view class="cu-tag bg-blue light tag">荐</view>
     </view>
-   <view class="simpleinro">欢迎加入学生会！加入校学生会，一起C位出道！</view></view>
+   <view class="simpleinro">欢迎加入学生会！加入校学生会，一起C位出道！</view>
+   <view class='time'>报名截止时间：1998-12-30</view>
+ </view>
+   
 </view>

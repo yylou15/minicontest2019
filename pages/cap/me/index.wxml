@@ -1,0 +1,49 @@
+<!--pages/cap/me/index.wxml-->
+<!--pages/admin/index.wxml-->
+
+<!-- <text>pages/test/test.wxml</text> -->
+<view class='header'>
+    <view class='avatarCircle'>
+        <image class="userinfo-avatar" src="../../../imgs/xiaotuanzi.png"></image>
+    </view>
+    <view class='avatarWave' animation="{{waveAnimation}}"></view>
+    <view class='ractangle'>
+        <view class='userinfo-nickname' >中南大学学生会</view>
+    </view>
+    <view class='triangle'></view>
+    <view class='header-shadow'></view>
+</view>
+
+ <view class="cu-list grid col-blue no-border mid-button">
+    <view class="cu-item bloc">
+      <view class="cuIcon-text text-blue ">
+      </view>
+      <text>我的报名</text>
+    </view>
+    <view class="cu-item bloc">
+      <view class="cuIcon-my text-blue">
+      </view>
+      <text>我的面试</text>
+    </view>
+  </view>
+    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius mid-button">
+    <view class="cu-item arrow">
+      <view class="content bind" bindtap="" >
+        <text class="cuIcon-profile text-grey"></text>
+        <text class="text-black txt">个人信息</text>
+      </view>
+    </view>
+     <view class="cu-item arrow">
+      <view class="content bind" bindtap="" >
+        <text class="cuIcon-service text-grey"></text>
+        <text class="text-black txt">我要面试</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content bind" bindtap="" >
+        <text class="cuIcon-mail text-grey"></text>
+        <text class="text-black txt">帮助&反馈</text>
+      </view>
+    </view>
+  </view>
+<button class="cu-btn round lg logout">退出登录</button>
