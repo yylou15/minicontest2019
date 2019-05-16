@@ -1,9 +1,0 @@
-/* pages/rookie/index.wxss */
-@import "/colorui/main.wxss";
-@import "/colorui/icon.wxss"; 
-
-#tab{
-  width:750rpx;
-  position:fixed;
-  bottom:-50rpx
-}

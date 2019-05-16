@@ -1,69 +1,3 @@
-<<<<<<< HEAD
-<!--pages/admin/index.wxml-->
-
-<!-- <text>pages/test/test.wxml</text> -->
-<view class='header'>
-    <view class='avatarCircle'>
-        <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
-    </view>
-    <view class='avatarWave' animation="{{waveAnimation}}"></view>
-    <view class='ractangle'>
-        <open-data class='userinfo-nickname' type="userNickName" lang="zh_CN"></open-data>
-    </view>
-    <view class='triangle'></view>
-    <view class='header-shadow'></view>
-</view>
-
- <view class="cu-list grid col-blue no-border mid-button">
-    <view class="cu-item bloc">
-      <view class="cuIcon-text text-blue ">
-      </view>
-      <text>我的报名</text>
-    </view>
-    <view class="cu-item bloc">
-      <view class="cuIcon-my text-blue">
-      </view>
-      <text>我的面试</text>
-    </view>
-  </view>
-    <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius mid-button">
-    <view class="cu-item arrow">
-      <view class="content bind" bindtap="" >
-        <text class="cuIcon-profile text-grey"></text>
-        <text class="text-black txt">个人信息</text>
-      </view>
-    </view>
-     <view class="cu-item arrow">
-      <view class="content bind" bindtap="" >
-        <text class="cuIcon-service text-grey"></text>
-        <text class="text-black txt">我要面试</text>
-      </view>
-    </view>
-    <view class="cu-item arrow">
-      <view class="content bind" bindtap="" >
-        <text class="cuIcon-mail text-grey"></text>
-        <text class="text-black txt">帮助&反馈</text>
-      </view>
-    </view>
-  </view>
-<button class="cu-btn round lg logout">退出登录</button>
-<!-- <view class="cu-bar tabbar margin-bottom-xl bg-white" id='tab'>
-    <view class="action text-gray">
-      <view class="cuIcon-homefill"></view> 首页
-    </view>
-     <view class="action text-gray">
-      <view class="cuIcon-sort"></view> 招新
-    </view>
-    
-   
-    <view class="action text-blue">
-      <view class="cuIcon-my">
-        <view class=" badge"></view>
-      </view>
-      我的
-    </view>
-  </view> -->
-=======
 <!--pages/admin/index.wxml-->
 
 <!-- <text>pages/test/test.wxml</text> -->
@@ -126,4 +60,3 @@
       我的
     </view>
   </view>  -->
->>>>>>> b5815930b88d617b6501b62792ca05203c2a8367

@@ -1,44 +1,34 @@
 /* pages/rookie/index/index.wxss */
-page, .page, .page__bd {
+page,
+.page,
+.page__bd {
   height: 100%;
-  font-family: '黑体';
+  font-family: "黑体";
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #eeece8;
-}  
-<<<<<<< HEAD
-/* #tab{
-  width:750rpx;
-  position:fixed;
-  bottom:-50rpx
-} */
-=======
- #tab{
-  width:750rpx;
-  position:fixed;
-  bottom:-50rpx
-} 
->>>>>>> b5815930b88d617b6501b62792ca05203c2a8367
-.tower-swiper .tower-item {
-		transform: scale(calc(0.5 + var(--index) / 10));
-		margin-left: calc(var(--left) * 100rpx - 150rpx);
-		z-index: var(--index);
-	}
-.all-width{
-  width: 750rpx;
-<<<<<<< HEAD
-=======
-  margin-top:70rpx;
 }
-.all-width2{
+#tab {
+  width: 750rpx;
+  position: fixed;
+  bottom: -50rpx;
+}
+.tower-swiper .tower-item {
+  transform: scale(calc(0.5 + var(--index) / 10));
+  margin-left: calc(var(--left) * 100rpx - 150rpx);
+  z-index: var(--index);
+}
+.all-width {
+  width: 750rpx;
+  margin-top: 70rpx;
+}
+.all-width2 {
   width: 730rpx;
-  margin-bottom:20rpx;
+  margin-bottom: 20rpx;
   border-radius: 40rpx;
 }
-.search{
+.search {
   text-align: left;
->>>>>>> b5815930b88d617b6501b62792ca05203c2a8367
 }
-  

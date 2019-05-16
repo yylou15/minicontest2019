@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 {
   "pages": [
     "pages/index/index",
-    "pages/rookie/interviewDetail/queue/index",
-    "pages/rookie/interviewDetail/index",
+    "pages/cap/me/index",
     "pages/rookie/index/index",
     "pages/rookie/me/index",
     "pages/rookie/recruit/index",
@@ -14,49 +12,8 @@
     "pages/recruit/new_recruit/new_recruit",
     "pages/my/my",
     "pages/index/logcode/code",
-    "pages/rookie/index"
-  ],
-  "window": {
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#43adef",
-    "navigationBarTitleText": "萌新方便面",
-    "navigationBarTextStyle": "white"
-  },
-  "tabBar": {
-    "color": "#a9b7b7",
-    "selectedColor": "#1296db",
-    "borderStyle": "black",
-    "list": [
-      {
-        "iconPath": "/imgs/TabbarIcon/icon_new_recruit.png",
-        "selectedIconPath": "/imgs/TabbarIcon/icon_new_recruit_fil.png",
-        "text": "招新",
-        "pagePath": "pages/recruit/recruit"
-      },
-      {
-        "iconPath": "/imgs/TabbarIcon/my.png",
-        "selectedIconPath": "/imgs/TabbarIcon/my_fill.png",
-        "text": "我的",
-        "pagePath": "pages/my/my"
-      }
-    ]
-  },
-  "sitemapLocation": "sitemap.json"
-=======
-{
-  "pages": [
-    "pages/cap/me/index",
-    "pages/rookie/index/index",
-    "pages/rookie/me/index",
-    "pages/index/index",
-    "pages/rookie/recruit/index",
-    "pages/admin/index",
-    "pages/index/adminLog/adminlog",
-    "pages/index/adminRigister/adminregister",
-    "pages/recruit/recruit",
-    "pages/recruit/new_recruit/new_recruit",
-    "pages/my/my",
-    "pages/index/logcode/code"
+    "pages/rookie/interviewDetail/queue/index",
+    "pages/rookie/interviewDetail/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -90,5 +47,4 @@
     ]
   },
   "sitemapLocation": "sitemap.json"
->>>>>>> b5815930b88d617b6501b62792ca05203c2a8367
 }

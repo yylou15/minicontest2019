@@ -1,21 +1,3 @@
-<<<<<<< HEAD
-<!--pages/rookie/recruit/index.wxml-->
-<!-- <view class="cu-bar tabbar margin-bottom-xl bg-white" id='tab'>
-    <view class="action text-gray">
-      <view class="cuIcon-homefill"></view> 首页
-    </view>
-     <view class="action text-blue">
-      <view class="cuIcon-sort"></view> 招新
-    </view>
-    <view class="action text-gray">
-      <view class="cuIcon-my">
-        <view class=" badge"></view>
-      </view>
-      我的
-    </view>
-  </view> -->
-
-=======
 <!-- <i-card title="卡片标题" extra="额外内容" thumb="https://i.loli.net/2017/08/21/599a521472424.jpg" >
     <view slot="content">内容不错</view>
     <view slot="footer">尾部内容</view>
@@ -33,4 +15,3 @@
  </view>
    
 </view>
->>>>>>> b5815930b88d617b6501b62792ca05203c2a8367

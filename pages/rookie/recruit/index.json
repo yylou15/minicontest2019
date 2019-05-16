@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-{
-  "usingComponents": {}
-=======
 {
   "usingComponents": {
     "i-card": "../../../dist/card/index"
   }
->>>>>>> b5815930b88d617b6501b62792ca05203c2a8367
 }

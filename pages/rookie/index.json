@@ -1,7 +1,0 @@
-{
-  "usingComponents": {
-        "index": "/pages/rookie/index/index",
-        "me": "/pages/rookie/me/index",
-        "recruit": "/pages/rookie/recruit/index"
-  }
-}
