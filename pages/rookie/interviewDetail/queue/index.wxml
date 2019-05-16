@@ -1,0 +1,42 @@
+<!--pages/rookie/interviewDetail/queue/index.wxml-->
+
+<view class="flex-sub text-center">
+    <view class="solid-bottom text-xsl padding">
+        <view class="text-green circle">
+            <open-data type="userAvatarUrl" class='avatar'></open-data>
+        </view>
+    </view>
+    <view wx:if="{{!ifQueuing}}">
+        <view class="padding">
+            目前共有 {{troopLength}} 人正在排队
+        </view>
+        <view class='margin'>
+            <button class='cu-btn bg-blue round lg shadow' bindtap='startQueuing'>开始排队</button>
+        </view>
+    </view>
+    <view wx:else>
+        <view class="padding">
+            <text wx:if='{{left}}'>您前面还有 {{left}} 人</text>
+            <text wx:else>到您了！</text>
+        </view>
+        <view class='margin'>
+            <button class='cu-btn lines-red round lg shadow' bindtap='cancelQueuing'>取消排队</button>
+        </view>
+    </view>
+</view>
+
+<view class='card'>
+    <view class="cu-list menu card-menu bg-white padding sm-border">
+
+        <view class="cu-item {{menuArrow?'arrow':''}} {{item.uid == uid?'border-red':''}}" wx:for="{{userList}}">
+            <view class="content padding">
+                <!-- <text class="cuIcon-warn text-green"></text>
+                <text class="text-grey">文本</text> -->
+                <view class="cu-avatar round lg" style="background-image:url({{item.avatarUrl}});"></view>
+            </view>
+            <view class="action">
+                <text class="text-grey text-sm">{{item.nickName}}</text>
+            </view>
+        </view>
+    </view>
+</view>

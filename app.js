@@ -1,14 +1,14 @@
 //app.js
 App({
     data:{
-      root:'https://mini.lou-yy.com/'
+      root:'https://mini.lou-yy.com/',
+      ws_root:'wss://mini.lou-yy.com/wss'
     },
     onLaunch: function () {
       // 展示本地存储能力
       // var logs = wx.getStorageSync('logs') || []
       // logs.unshift(Date.now())
       // wx.setStorageSync('logs', logs)
-
         if(!wx.getStorageSync('uid')){
             // 登录
             wx.login({

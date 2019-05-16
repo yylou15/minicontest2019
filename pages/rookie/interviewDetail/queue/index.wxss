@@ -1,0 +1,16 @@
+/* pages/rookie/interviewDetail/queue/index.wxss */
+.avatar{
+    display: block;
+    width: 150rpx;
+    height: 150rpx;
+}
+.circle{
+    border-radius: 50%;
+    width: 150rpx;
+    height: 150rpx;
+    overflow: hidden;
+    margin: 0 auto
+}
+.border-red{
+    border: 1px dotted red;
+}

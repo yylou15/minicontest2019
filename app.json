@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/rookie/interviewDetail/queue/index",
+    "pages/rookie/interviewDetail/index",
     "pages/rookie/index/index",
     "pages/rookie/me/index",
     "pages/rookie/recruit/index",

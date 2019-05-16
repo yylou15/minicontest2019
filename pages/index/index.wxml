@@ -1,7 +1,7 @@
 <!--pages/index/index.wxml-->
 <view class='page'>
 
-<image class="logo" src='../../imgs/noodle3.png'></image>
+<image class="logo" src='../../imgs/noodle3.png' bindtap='goto'></image>
 <view class='welcome'>WELCOME</view>
 
 <button class='new-log' bindtap='isrookie'>我是萌新</button>
@@ -11,3 +11,23 @@
 </view>
 <image class="logo-bottom" src='../../imgs/house.png'></image>
 <view class='help'><label>使用帮助</label>   |   <label>意见反馈</label></view>
+
+
+<!-- 模态窗口，让用户绑定信息 -->
+<view class="cu-modal {{showModal}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-center">
+        <text>授权</text>
+      <!-- <view class="content" style='text-align:center'>授权</view> -->
+    </view>
+    <view class="padding-xl">
+      我们需要获取您的用户信息（微信昵称、头像等）
+    </view>
+    <view class="cu-bar bg-white justify-end">
+      <view class="action">
+        <button open-type="getUserInfo" class="cu-btn bg-green" bindgetuserinfo="modalAccept">同意</button>
+        <!-- <button class="cu-btn line-green text-green margin-left" bindtap="modalCancel">取消</button> -->
+      </view>
+    </view>
+  </view>
+</view>
