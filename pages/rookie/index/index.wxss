@@ -7,13 +7,20 @@ page, .page, .page__bd {
   flex-direction: column;
   align-items: center;
   background-color: #eeece8;
-  overflow: hidden
 }  
+<<<<<<< HEAD
 /* #tab{
   width:750rpx;
   position:fixed;
   bottom:-50rpx
 } */
+=======
+ #tab{
+  width:750rpx;
+  position:fixed;
+  bottom:-50rpx
+} 
+>>>>>>> b5815930b88d617b6501b62792ca05203c2a8367
 .tower-swiper .tower-item {
 		transform: scale(calc(0.5 + var(--index) / 10));
 		margin-left: calc(var(--left) * 100rpx - 150rpx);
@@ -21,5 +28,17 @@ page, .page, .page__bd {
 	}
 .all-width{
   width: 750rpx;
+<<<<<<< HEAD
+=======
+  margin-top:70rpx;
+}
+.all-width2{
+  width: 730rpx;
+  margin-bottom:20rpx;
+  border-radius: 40rpx;
+}
+.search{
+  text-align: left;
+>>>>>>> b5815930b88d617b6501b62792ca05203c2a8367
 }
   

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!--pages/rookie/index/index.wxml-->
 <view class='page'>
 <swiper class="card-swiper round-dot all-width" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
@@ -23,3 +24,42 @@
       我的
     </view>
   </view> -->
+=======
+<!--pages/rookie/index/index.wxml-->
+
+<view class="cu-bar bg-white search fixed" style="top:{{CustomBar}}px;">
+  <view class="search-form round">
+    <text class="cuIcon-search"></text>
+    <input type="text" placeholder="输入搜索的关键词" confirm-type="search"></input>
+  </view>
+  <view class="action">
+    <button class="cu-btn bg-gradual-blue shadow-blur round search">搜索</button>
+  </view>
+</view>
+<swiper class="card-swiper round-dot all-width" indicator-dots="true" circular="true" autoplay="true" interval="5000" duration="500" bindchange="cardSwiper" indicator-color="#8799a3" indicator-active-color="#0081ff">
+  <swiper-item wx:for="{{swiperList}}" wx:key class="{{cardCur==index?'cur':''}}">
+    <view class="swiper-item">
+      <image src="{{item.url}}" mode="aspectFill" wx:if="{{item.type=='image'}}"></image>
+      <video src="{{item.url}}" autoplay loop muted show-play-btn="{{false}}" controls="{{false}}" objectFit="cover" wx:if="{{item.type=='video'}}"></video>
+    </view>
+  </swiper-item>
+</swiper>
+ <view class="cu-card article no-card all-width2">
+  <view class="cu-item shadow">
+    <view class="title">
+      <view class="text-cut" style='text-align:left'>中南大学学生会</view>
+    </view>
+    <view class="content">
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="aspectFill"></image>
+      <view class="desc">
+        <view class="text-content"> 折磨生出苦难，苦难又会加剧折磨，凡间这无穷的循环，将有我来终结！真正的恩典因不完整而美丽，因情感而真诚，因脆弱而自由！</view>
+        <!-- <view>
+          <view class="cu-tag bg-red light sm round">正义天使</view>
+          <view class="cu-tag bg-green light sm round">史诗</view>
+        </view> -->
+      </view>
+    </view>
+  </view>
+</view>
+ 
+>>>>>>> b5815930b88d617b6501b62792ca05203c2a8367
