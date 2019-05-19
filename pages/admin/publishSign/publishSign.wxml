@@ -1,0 +1,131 @@
+<!-- 步骤条 -->
+
+<view class="padding">
+    <view class="cu-steps">
+        <view class="cu-item {{index>num?'':'text-blue'}}" wx:for="{{numList}}" wx:key>
+            <text class="num {{index==2?'err':''}}" data-index="{{index + 1}}"></text> {{item.name}}
+        </view>
+    </view>
+</view>
+<view class='wrapper'>
+    <view wx:if='{{num == 0}}'>
+        <view class='publish-form-title'>
+            所属机构
+        </view>
+        <input class='publish-form-input' value='{{organizationName}}' disabled></input>
+        <view class='publish-form-title'>
+            招新标题
+        </view>
+        <input class='publish-form-input' placeholder='如：宣传部2019年春季招新'></input>
+        <view class='publish-form-title'>
+            预招人数
+        </view>
+        <input class='publish-form-input' type='digit'></input>
+        <view class='publish-form-title'>
+            招新简介
+        </view>
+        <view class="textarea-group">
+            <textarea class='textarea' maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="输入本次招新简介（100字左右）"></textarea>
+        </view>
+        <view class='publish-form-title'>是否需要面试</view>
+        <radio-group class='radio-gruop'>
+            <view style='display:inline-block'>
+                <radio class="blue radio"></radio> 是</view>
+            <view style='display:inline-block'>
+                <radio class="blue radio margin-left-sm"></radio> 否</view>
+        </radio-group>
+        <view class='publish-form-title'>招新要求</view>
+        <button class='cu-btn bg-blue shadow' bindtap='addReq'>
+            <text class='cuIcon-add lg text-white'></text> 新增
+        </button>
+        <button class='cu-btn bg-blue shadow margin-left-lg' bindtap='delReq'>
+            <text class='cuIcon-add lg text-white'></text> 删除
+        </button>
+        <input class='publish-form-input margin-top-lg' wx:for='{{requirements}}' type='digit' placeholder='请输入要求{{index + 1}}' data-index='{{index}}'>
+        </input>
+    </view>
+    <view wx:if='{{num == 1}}'>
+        <i-grid>
+            <i-grid-item i-class="{{isSelected1? 'gridItemSelected':''}}" data-itemId="name" bindtap="handleGridItemClick">
+                <i-grid-icon>
+                    <i-icon type="mine" size="28" />
+                </i-grid-icon>
+                <i-grid-label>
+                    姓名
+                </i-grid-label>
+            </i-grid-item>
+            <i-grid-item i-class="{{isSelected2? 'gridItemSelected':''}}" data-itemId="phone" bindtap="handleGridItemClick">
+                <i-grid-icon>
+                    <i-icon type="mobilephone" size="28" />
+                </i-grid-icon>
+                <i-grid-label>
+                    手机
+                </i-grid-label>
+            </i-grid-item>
+            <i-grid-item i-class="{{isSelected3? 'gridItemSelected':''}}" data-itemId="email" bindtap="handleGridItemClick">
+                <i-grid-icon>
+                    <i-icon type="mail" size="28" />
+                </i-grid-icon>
+                <i-grid-label>
+                    邮箱
+                </i-grid-label>
+            </i-grid-item>
+        </i-grid>
+        <i-grid>
+            <i-grid-item i-class="{{isSelected4? 'gridItemSelected':''}}" data-itemId="CSUid" bindtap="handleGridItemClick">
+                <i-grid-icon>
+                    <i-icon type="barrage" size="28" />
+                </i-grid-icon>
+                <i-grid-label>
+                    学号
+                </i-grid-label>
+            </i-grid-item>
+            <i-grid-item i-class="{{isSelected5? 'gridItemSelected':''}}" data-itemId="sex" bindtap="handleGridItemClick">
+                <i-grid-icon>
+                    <i-icon type="group" size="28" />
+                </i-grid-icon>
+                <i-grid-label>
+                    性别
+                </i-grid-label>
+            </i-grid-item>
+            <i-grid-item i-class="{{isSelected6? 'gridItemSelected':''}}" data-itemId="major" bindtap="handleGridItemClick">
+                <i-grid-icon>
+                    <i-icon type="businesscard" size="28" />
+                </i-grid-icon>
+                <i-grid-label>
+                    专业
+                </i-grid-label>
+            </i-grid-item>
+        </i-grid>
+        <i-grid>
+            <i-grid-item i-class="{{isSelected7? 'gridItemSelected':''}}" data-itemId="qq" bindtap="handleGridItemClick">
+                <i-grid-icon>
+                    <i-icon type="emoji" size="28" />
+                </i-grid-icon>
+                <i-grid-label>
+                    QQ号
+                </i-grid-label>
+            </i-grid-item>
+            <i-grid-item i-class="{{isSelected8? 'gridItemSelected':''}}" data-itemId="klass" bindtap="handleGridItemClick">
+                <i-grid-icon>
+                    <i-icon type="businesscard" size="28" />
+                </i-grid-icon>
+                <i-grid-label>
+                    班级
+                </i-grid-label>
+            </i-grid-item>
+            <i-grid-item i-class="{{isSelected9? 'gridItemSelected':''}}" data-itemId="hometown" bindtap="handleGridItemClick">
+                <i-grid-icon>
+                    <i-icon type="homepage" size="28" />
+                </i-grid-icon>
+                <i-grid-label>
+                    籍贯
+                </i-grid-label>
+            </i-grid-item>
+        </i-grid>
+    </view>
+    <view wx:if='{{num == 2}}'>3</view>
+    <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap='numSteps'>
+        <text class="{{showLoading}} iconfont-spin"></text> {{showLoading == "cuIcon-loading2"? '加载中' : num == 2? '完成':'下一步'}}
+    </button>
+</view>

@@ -1,0 +1,63 @@
+/* pages/admin/publishSign/publishSign.wxss */
+
+.wrapper {
+    padding: 10rpx 80rpx;
+}
+
+.publish-form-title {
+    color: #43adef;
+    font-size: 30rpx;
+    font-weight: bold;
+    line-height: 35rpx;
+    padding: 25rpx 20rpx;
+}
+
+.publish-form-input {
+    border: 1px solid #ccc;
+    border-radius: 15rpx;
+    height: 60rpx;
+    padding: 0 20rpx;
+}
+
+.radio-gruop {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.textarea {
+    margin: 32rpx 0 30rpx;
+    height: 4.6em;
+    width: 100%;
+    line-height: 1.2em;
+    flex: 1;
+    font-size: 28rpx;
+    padding: 0;
+}
+
+.textarea-group {
+    background-color: none !important;
+    border-radius: 20rpx;
+    border: 1px solid #ccc;
+    padding: 1rpx 30rpx;
+    display: flex;
+    align-items: center;
+    min-height: 100rpx;
+    justify-content: space-between;
+}
+/* pages/recruit/new_recruit/new_recruit.wxss */
+page{
+    padding-top: 3vh;
+}
+.main-form{
+    margin-top: 5vh;
+}
+.panel{
+    background-color: #f5f5f5;
+}
+.grid-wrapper{
+    width: 750rpx;
+}
+.gridItemSelected{
+    background-color: #43adef;
+}
