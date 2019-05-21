@@ -1,5 +1,6 @@
 {
     "pages": [
+        "pages/admin/index",
         "pages/index/index",
         "pages/admin/interviewManage/index",
         "pages/index/adminLog/adminlog",
@@ -7,7 +8,6 @@
         "pages/index/logcode/code",
         "pages/cap/me/index",
         "pages/admin/publishSign/publishSign",
-        "pages/admin/index",
         "pages/recruit/recruit",
         "pages/recruit/new_recruit/new_recruit",
         "pages/my/my",
@@ -15,7 +15,8 @@
         "pages/rookie/me/index",
         "pages/rookie/recruit/index",
         "pages/rookie/interviewDetail/queue/index",
-        "pages/rookie/interviewDetail/index"
+        "pages/rookie/interviewDetail/index",
+        "pages/admin/component/my/updateOrgInfo/updateOrgInfo"
     ],
     "window": {
         "backgroundTextStyle": "light",

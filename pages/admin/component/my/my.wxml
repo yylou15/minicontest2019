@@ -1,0 +1,43 @@
+<!--pages/admin/my/my.wxml-->
+<view class='header'>
+    <view class='avatarCircle'>
+        <open-data class="userinfo-avatar" type="userAvatarUrl"></open-data>
+    </view>
+    <view class='avatarWave' animation="{{waveAnimation}}"></view>
+    <view class='ractangle'>
+        <text class='userinfo-nickname'>{{orgInfo.name?orgInfo.name:'...'}}</text>
+    </view>
+    <view class='triangle'></view>
+    <view class='header-shadow'></view>
+</view>
+<!-- 列表卡片 -->
+ <view class="cu-list menu card-menu margin-top bg-white">
+    <view class="cu-item arrow" bindtap='updataOrgInfo'>
+      <view class="content">
+        <text class="cuIcon-edit text-blue"></text>
+        <text class="text-grey">完善组织信息</text>
+      </view>
+    </view>
+    <view class="cu-item">
+      <view class="content">
+        <text class="cuIcon-pic text-blue"></text>
+        <text class="text-grey">组织宣传图</text>
+      </view>
+      <view class="action">
+        <button class="cu-btn round bg-blue shadow">
+          <text class="cuIcon-upload"></text> 上传</button>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content">
+        <text class="cuIcon-form text-blue"></text>
+        <text class="text-grey">管理已发布的报名</text>
+      </view>
+    </view>
+    <view class="cu-item arrow">
+      <view class="content">
+        <text class="cuIcon-rank text-blue"></text>
+        <text class="text-grey">查看报名详情</text>
+      </view>
+    </view>
+  </view>

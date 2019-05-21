@@ -1,19 +1,29 @@
 <!--pages/admin/index.wxml-->
-<view class='page'></view>
-<view class="cu-bar tabbar margin-bottom-xl bg-white" id='tab'>
-    <view class="action text-blue">
-      <view class="cuIcon-homefill"></view> 首页
+<view class='admin-wrapper'>
+    <home wx:if='{{currentPage == "home"}}'></home>
+    <publish wx:if='{{currentPage == "publish"}}'></publish>
+    <my wx:if='{{currentPage == "my"}}'></my>
+</view>
+<view class="cu-bar tabbar bg-white" id='tab'>
+
+    <view class="action text-{{ currentPage == 'publish'?'blue':'gray' }}" data-act='publish' bindtap='setPage'>
+        <view class="cuIcon-add text-{{ currentPage == 'publish'?'blue':'gray' }}"></view>发布
     </view>
-   
-    <view class="action text-gray add-action">
-      <button class="cu-btn cuIcon-add bg-blue shadow"></button>
-      发布
+    <!-- <view class="action text-{{ currentPage == 'publish'?'blue':'gray' }} add-action" data-act='publish' bindtap='setPage'>
+        <button class="cu-btn cuIcon-add bg-blue shadow"></button>
+        发布
+    </view> -->
+
+
+    <!-- <view class="action text-{{ currentPage == 'home'?'blue':'gray' }}" data-act='home' bindtap='setPage'>
+        <view class="cuIcon-home{{ currentPage == 'home'?'fill':'' }}"></view>首页
     </view>
-   
-    <view class="action text-gray">
-      <view class="cuIcon-my">
-        <view class=" badge"></view>
-      </view>
-      我的
+    <view class="action text-{{ currentPage == 'publish'?'blue':'gray' }} add-action" data-act='publish' bindtap='setPage'>
+        <button class="cu-btn cuIcon-add bg-blue shadow"></button>
+        发布
+    </view> -->
+    <view class="action text-{{ currentPage == 'my'?'blue':'gray' }}" data-act='my' bindtap='setPage'>
+        <view class="cuIcon-my{{ currentPage == 'my'?'fill':'' }}"></view>
+        我的
     </view>
-  </view>
+</view>

@@ -1,0 +1,26 @@
+<!--pages/admin/component/my/updateOrgInfo/updateOrgInfo.wxml-->
+<form bindsubmit='update'>
+
+    <input name="name" value='{{oid}}' style='display:none'></input>
+    <view class="cu-form-group margin-top">
+        <view class="title">组织名称</view>
+        <input placeholder="" name="name" value='{{orgInfo.name}}'></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">单人最多允许报名数</view>
+        <input placeholder="不填即为不限" name="max_departments_allowed" value='{{orgInfo.max_departments_allowed}}' type='digit'></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">组织简介</view>
+        <textarea placeholder="暂无" name="introduction" value='{{orgInfo.introduction}}'></textarea>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">登录码</view>
+        <input placeholder="" name="code" value='{{orgInfo.code}}'></input>
+    </view>
+    <view class='cu-form-group padding'>
+        <button form-type="submit" class='cu-btn bg-blue round lg shadow' style='width:100%'>
+            <text class='cuIcon-check text-white'></text> 提交
+        </button>
+    </view>
+</form>

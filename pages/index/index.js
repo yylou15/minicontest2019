@@ -14,6 +14,11 @@ Page({
                 showModal: "show"
             });
         }
+        if(wx.getStorageSync("oid")){
+            wx.redirectTo({
+                url: '/pages/admin/index',
+            })
+        }
     },
     modalAccept: function(e) {
         console.log(e.detail.userInfo);
@@ -79,9 +84,9 @@ Page({
      * 部长跳转
      */
     isadmin: function(e) {
-        //   var url = "/pages/index/adminLog/adminlog";
-        var url = "/pages/admin/publishSign/publishSign";
-        var url = "/pages/admin/interviewManage/index";
+          var url = "/pages/index/adminLog/adminlog";
+        // var url = "/pages/admin/publishSign/publishSign";
+        // var url = "/pages/admin/interviewManage/index";
         
         wx.navigateTo({
             url: url

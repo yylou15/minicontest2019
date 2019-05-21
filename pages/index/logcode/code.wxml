@@ -2,12 +2,15 @@
 <view class='page'>
 <image class="logo" src='../../../imgs/success.png'></image>
 	<view class="cu-form-group margin-top" id='name'>
-		<view class="title">您的登陆码为：</view>
-		<input value="{{code}}" class='inp' bindchange="orgnizeChange" disabled='disabled' id='code'></input>
+		<view class="title">您的登录码为：</view>
+		<input value="{{code}}" class='inp' bindchange="orgnizeChange" disabled='disabled' id='code' bindlongtap='copy'></input>
 	</view> 
+    <view class="text-center">
+      <view class="padding">长按复制，记得妥善保存哦~</view>
+    </view>
  <!-- <view class='other'><label class='blue'>忘记登录码</label>   |   <label class='blue' bindtap='register'>立即注册</label></view> -->
  <view class="loginBtnView"> 
-  <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="">登录</button> 
+  <button class="loginBtn" size="{{primarySize}}" loading="{{loading}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="login">登录</button> 
  </view>  
 </view>
 <image class="logo-bottom" src='../../../imgs/house.png'></image>

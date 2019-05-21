@@ -1,4 +1,7 @@
 {
-  "usingComponents": {
-  }
+    "usingComponents": {
+        "home": "/pages/admin/component/home/home",
+        "publish": "/pages/admin/component/publish/publish",
+        "my": "/pages/admin/component/my/my"
+    }
 }
