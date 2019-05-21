@@ -130,6 +130,20 @@ Page({
                 })
             })
         })
+
+        wx.onSocketClose(function () {
+            wx.connectSocket({
+                url: getApp().data.ws_root,
+                header: {
+                    'content-type': 'application/json'
+                },
+                success() {
+                    that.getQueue()
+                }
+                // protocols: ['protocol1'],
+                // method: 'GET'
+            })
+        })
     },
     startQueuing: function() {
         this.setData({
