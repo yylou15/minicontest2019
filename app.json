@@ -1,7 +1,7 @@
 {
     "pages": [
-        "pages/admin/interviewManage/index",
         "pages/index/index",
+        "pages/admin/interviewManage/index",
         "pages/index/adminLog/adminlog",
         "pages/index/adminRigister/adminregister",
         "pages/index/logcode/code",

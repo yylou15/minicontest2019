@@ -8,7 +8,7 @@ Page({
         interviewId: '',
         remark: ''
     },
-    onLoad: function(options) {
+    onShow: function(options) {
         this.setData({
             interviewId: '1'
         })
@@ -20,7 +20,6 @@ Page({
         // 录音配置
         let that = this;
         this.data.recorderManager.onStop((res) => {
-            console.log(res.tempFilePath)
             wx.uploadFile({
                 url: app.data.root + 'main/interviews/uploadVoiceRecord',
                 filePath: res.tempFilePath,
@@ -58,7 +57,6 @@ Page({
             const {
                 frameBuffer
             } = res
-            console.log('frameBuffer.byteLength', frameBuffer.byteLength)
         })
 
     },
@@ -76,7 +74,6 @@ Page({
                 interviewId: that.data.interviewId
             },
             success(res) {
-                console.log(res.data)
                 that.setData({
                     queueList: res.data
                 })
@@ -101,7 +98,6 @@ Page({
                         // 这个要改
                         nowInterviewee: that.data.queueListInfo[that.data.queueList.length - 1].uid
                     })
-                    console.log(that.data.nowInterviewee)
                 }
             }
         })
@@ -151,7 +147,6 @@ Page({
 
                         }
                     })
-                    console.log(res.data)
                 }
             })
         }
@@ -170,13 +165,11 @@ Page({
             // method: 'GET'
         })
         wx.onSocketMessage(function(res) {
-            console.log(res.data)
             res = JSON.parse(res.data);
             if (res.type == 'troopList') {
                 that.setData({
                     queueList: res.content.split(',')
                 })
-                console.log(that.data.queueList)
                 if (that.data.queueList.length && that.data.queueList[0] == ''){
                     that.setData({
                         queueList : []
@@ -193,7 +186,6 @@ Page({
                 },
                 success() {
                     that.getQueue()
-                    console.log(1421421)
                 }
                 // protocols: ['protocol1'],
                 // method: 'GET'

@@ -81,6 +81,8 @@ Page({
     isadmin: function(e) {
         //   var url = "/pages/index/adminLog/adminlog";
         var url = "/pages/admin/publishSign/publishSign";
+        var url = "/pages/admin/interviewManage/index";
+        
         wx.navigateTo({
             url: url
         });
