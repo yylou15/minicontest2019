@@ -8,10 +8,13 @@ Page({
         interviewId: '',
         remark: ''
     },
-    onShow: function(options) {
+    onLoad: function(options){
+        console.log(options)
         this.setData({
-            interviewId: '1'
+            interviewId: options.iid
         })
+    },
+    onShow: function(options) {
         // this.getQueue()
         this.openSocket()
         this.setData({
@@ -190,6 +193,11 @@ Page({
                 // protocols: ['protocol1'],
                 // method: 'GET'
             })
+        })
+    },
+    onUnload(){
+        wx.closeShocket({
+            
         })
     },
     textareaAInput(e) {

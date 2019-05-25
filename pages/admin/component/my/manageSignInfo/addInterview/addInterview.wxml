@@ -1,0 +1,32 @@
+<!--pages/admin/component/my/manageSignInfo/addInterview/addInterview.wxml-->
+<form bindsubmit='addInterview'>
+    <view class="cu-form-group">
+        <view class="title">选择时间</view>
+        <picker name="time" mode="time" value="{{time}}" start="09:01" end="21:01" bindchange="TimeChange">
+            <view class="picker">
+                {{time}}
+            </view>
+        </picker>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">选择日期</view>
+        <picker name='date' mode="date" value="{{date}}" start="2015-09-01" end="2020-09-01" bindchange="DateChange">
+            <view class="picker">
+                {{date}}
+            </view>
+        </picker>
+    </view>
+    <view class='cu-form-group'>
+        <view class="title">地点</view>
+        <input name="place" placeholder=""></input>
+    </view>
+    <view class='cu-form-group'>
+        <view class="title">备注</view>
+        <textarea name="remark" placeholder="包括一些注意事项等..."></textarea>
+    </view>
+    <view class='cu-form-group padding'>
+        <button class='cu-btn bg-blue round shadow' style='width:100%' form-type="submit">
+            <text class='cuIcon-check text-white'></text> 提交
+        </button>
+    </view>
+</form>

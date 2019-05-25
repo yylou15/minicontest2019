@@ -46,6 +46,10 @@ Component({
     methods: {
         // 下一步
         publish(e){
+            this.setData({
+                showLoading: 'cuIcon-loading2'
+            })
+            let that = this
             console.log(e.detail.value)
             e.detail.value.oid = wx.getStorageSync('oid')
             wx.request({
@@ -54,7 +58,18 @@ Component({
                 method:"post",
                 success(res){
                     console.log(res)
-                    
+
+                    that.setData({
+                        showLoading: ''
+                    })
+                    if(res.data.status == true){
+                        that.numSteps()
+                    }else{
+                        wx.showToast({
+                            title: res.data.msg,
+                            icon: 'none'
+                        })
+                    }
                 }
             })
         },
@@ -74,7 +89,14 @@ Component({
                 requirements: old
             })
         },
-
+        setReq(e){
+            let index = e.currentTarget.dataset.index
+            let old = this.data.requirements;
+            old[index] = e.detail.value
+            this.setData({
+                requirements: old
+            })
+        },
         // 新增要求
         delReq() {
             let old = this.data.requirements;

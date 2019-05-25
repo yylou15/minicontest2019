@@ -14,7 +14,8 @@ Component({
      * 组件的初始数据
      */
     data: {
-        orgInfo:{}
+        orgInfo:{},
+        
     },
     lifetimes:{
         attached() {
@@ -68,7 +69,9 @@ Component({
     methods: {
         getOrgInfo(){
             let that = this;
-            console.log(111)
+            this.setData({
+                orgInfo: {}
+            })
             wx.request({
                 url: getApp().data.root + 'main/organizations/getOneInfo',
                 data:{
@@ -83,6 +86,44 @@ Component({
         updataOrgInfo(){
             wx.navigateTo({
                 url: 'component/my/updateOrgInfo/updateOrgInfo',
+            })
+        },
+        uploadOrgBanner(){
+            let that = this;
+            wx.chooseImage({
+                count:1,
+                success: function (res) {
+                    wx.showLoading({
+                        title: '上传中...',
+                    })
+                    wx.uploadFile({
+                        url: getApp().data.root + 'main/organizations/uploadBanner',
+                        filePath: res.tempFilePaths[0],
+                        name: 'banner',
+                        formData:{
+                            oid : wx.getStorageSync('oid')
+                        },
+                        success(res){
+                            if(JSON.parse(res.data).status == true){
+                                wx.showToast({
+                                    title: '上传成功',
+                                })
+                                that.getOrgInfo()
+                                wx.hideLoading()
+                            }else{
+                                wx.showToast({
+                                    title: res.data.msg,
+                                })
+                                wx.hideLoading()
+                            }
+                        }
+                    })
+                },
+            })
+        },
+        gotoManage(){
+            wx.navigateTo({
+                url: 'component/my/manageSignInfo/manageSignInfo',
             })
         }
     }

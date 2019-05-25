@@ -41,12 +41,12 @@
         <button class='cu-btn bg-blue shadow margin-left-lg' bindtap='delReq'>
             <text class='cuIcon-add lg text-white'></text> 删除
         </button>
-        <input class='publish-form-input margin-top-lg' wx:for='{{requirements}}' type='text' placeholder='请输入要求{{index + 1}}' data-index='{{index}}' value='{{item}}' name='requirement{{index + 1}}'>
+        <input class='publish-form-input margin-top-lg' bindinput='setReq' wx:for='{{requirements}}' type='text' placeholder='请输入要求{{index + 1}}' data-index='{{index}}' value='{{item}}' name='requirement{{index + 1}}'>
         </input>
     </view>
     <view wx:if='{{num == 1}}'>3</view>
-    <button class="cu-btn block bg-blue margin-tb-sm lg" bindtap='numSteps' form-type="{{num == 0?'submit':''}}">
-        <text class="{{showLoading}} iconfont-spin"></text> {{showLoading == "cuIcon-loading2"? '加载中' : num == 1? '完成':'下一步'}}
+    <button class="cu-btn block bg-blue margin-tb-sm lg" form-type="{{num == 0?'submit':''}}">
+        <text class="{{showLoading}} iconfont-spin"></text> {{showLoading == "cuIcon-loading2"? '下一步' : num == 1? '完成':'下一步'}}
     </button>
 </form>
 </view>

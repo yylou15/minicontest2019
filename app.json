@@ -16,7 +16,9 @@
         "pages/rookie/recruit/index",
         "pages/rookie/interviewDetail/queue/index",
         "pages/rookie/interviewDetail/index",
-        "pages/admin/component/my/updateOrgInfo/updateOrgInfo"
+        "pages/admin/component/my/updateOrgInfo/updateOrgInfo",
+        "pages/admin/component/my/manageSignInfo/manageSignInfo",
+        "pages/admin/component/my/manageSignInfo/addInterview/addInterview"
     ],
     "window": {
         "backgroundTextStyle": "light",
