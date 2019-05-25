@@ -1,0 +1,72 @@
+/* pages/admin/my/my.wxss */
+.header {
+  width: 750rpx;
+  height: 300rpx;
+  position: relative;
+  overflow: hidden;
+}
+.header-shadow {
+  width: 800rpx;
+  margin-left: -35rpx;
+  height: 100rpx;
+  background-color: #43adef;
+  transform: rotate(-8deg);
+  box-shadow: 8px 8px 10px #ccc;
+  position: absolute;
+  top: 125rpx;
+}
+.ractangle {
+  width: 750rpx;
+  height: 125rpx;
+  background-color: #43adef;
+  position: relative;
+}
+.triangle {
+  width: 0;
+  height: 0;
+  border-width: 10vh 750rpx 0 0;
+  border-style: solid;
+  border-color: #43adef transparent transparent transparent;
+}
+.avatarCircle {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  z-index: 999;
+  top: 100rpx;
+  right: 80rpx;
+  /* border: 2px solid #eee; */
+  padding: 4rpx;
+}
+.avatarWave {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.5);
+  top: 100rpx;
+  right: 80rpx;
+  position: absolute;
+  z-index: 998;
+}
+
+.userinfo-avatar {
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  overflow: hidden;
+}
+.userinfo-nickname {
+  position: absolute;
+  bottom: -30rpx;
+  left: 40rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: white;
+  z-index: 99999;
+}

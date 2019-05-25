@@ -1,0 +1,86 @@
+<!--pages/rookie/recruitConclusion/conclusion.wxml-->
+<!--宣传图-->
+<view class="bg-img bg-mask padding-tb-xl" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');height: 340rpx;">
+  <view class="padding-xl text-white">
+    <view class="padding-xs text-xl">
+      跳跳糖协会
+    </view>
+    <view class="padding-xs">
+      一个很喜欢吃跳跳糖的协会
+    </view>
+  </view>
+</view>
+<!--协会介绍-->
+ <view class=" padding-xs flex align-center">
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-bold padding">协会介绍</view>
+      <view class="padding">
+      中南大学青年志愿者协会，简称校青志协，现为隶属于中南大学团委的学生组织之一。协会下有二级学院青年志愿者分会，此外，湘雅医学院青志协于2016年并入组织。
+校青志协成立于1994年，至今已有二十三年的发展历史，是湖南各高校中最早开展青年志愿服务工作的团队之一。在学校团委的大力支持和多届会长的正确领导下，校青志协本着与时代同步、为社会分忧的原则，根据学校及社会实际需求，不计报酬、不问付出，尽己所能地帮助身边的同学和社会弱势群体，深入开展青年志愿服务行动。二十几年来，队伍不断壮大、领域不断拓展、服务不断深化，得到了学校和社会的广泛肯定。
+中南大学青年志愿者协会下设行政中心（含办公室、组织部、培训部）、宣传中心（含宣传部、媒体部）、项目中心（项目部、对外联络部）、行动中心（含义务家教部、敬老爱幼部、阳光支教部、电脑维修部、希望捐赠部）四个中心。另中南大学青年志愿者协会湘雅分会共（办公室、组织部、宣传部、项目部、活动部）五个部门。</view>
+    </view>
+  </view>
+<!--部门图-->
+   <view class=" padding-xs flex align-center">
+    <view class="flex-sub text-center">
+      <view class=" text-bold padding">部门介绍</view>
+    </view>
+  </view>
+<view class="caption-wrap padding-xs">
+    <i-collapse name="{{name}}" >
+        <i-collapse-item
+                name="name1"
+                title="行政中心"
+                i-class-title="collapse-item-title"
+                i-class-content="collapse-item-content">
+            <view slot="content">
+      <view>下设办公室、组织部、培训部。</view>
+      <view>办公室：办公室主负责协会财政管理，包括租借场地及物资统计、协会预算与报账事务、干事锻炼登记及志愿服务认证四个重要方面。办公室是青志协负责接待其他社团及个人的场所，在七食堂三楼有固定的办公地点，每晚会有值班人员于18:30---21:00进行值班。</view>
+      <view>组织部：与中南大学青年志愿者协会同时成立，共有部长、副部长、干事等十余人。组织部主要负责组织协会的志愿者纳新和招干活动，同时也负责组织大型活动，如：会长团换届选举大会、国际志愿者日活动、志愿服务宣讲会等。 自成立以来，组织部紧跟中南大学青年志愿者协会“服务他人，升华自我”的服务宗旨，成功举办并参与“香港时尚购物展”志愿者招募活动、“美丽长沙，文明地铁”学雷锋志愿活动、“第二届中国（长沙）国际矿物宝石博览会”志愿者招募等大型志愿服务活动，极大地丰富了中南学子的业余生活，同时也为协会的繁荣与发展做出了突出贡献。</view>
+      <view>培训部：作为校青志协新鲜血液，通过切身实地的参与志愿服务，进行总结与建议，并负责对志愿者进行培训。主要参与地铁志愿服务、图书馆整理活动、心灵伙伴等志愿服务项目。</view>
+            </view>
+        </i-collapse-item>
+        <i-collapse-item
+                name="name2"
+                title="宣传中心"
+                i-class-title="collapse-item-title"
+                i-class-content="collapse-item-content">
+            <view slot="content" i-class-content="green-text">
+                <view>下设宣传部、媒体部</view>
+                <view>宣传部：宣传部职责是通过PS等软件制作海报、展板、视频、宣传单等对协会的各项活动进行宣传推广，吸引学校的学生参与协会志愿活动，因而宣传部和每个部门关系密切，也是必不可少的一个部门。</view>
+                <view>媒体部：是协会对外的窗口，主要管理协会的微博、QQ和微信。永远走在协会活动的最前线，既是协会常规活动和大型活动的见证者，也是志愿活动不折不扣的参与者。追求细节中的趣味、事件中的真实、平凡中的感动。</view>
+            </view>
+        </i-collapse-item>
+        <i-collapse-item
+                name="name3"
+                title="项目中心"
+                i-class-title="collapse-item-title"
+                i-class-content="collapse-item-content">
+            <view slot="content">
+               <view>下设项目部、对外联络部。</view>
+               <view>项目部：负责运营项目与开发项目。运营的志愿服务项目包括长沙市橘子洲站地铁志愿服务、心灵伙伴志愿服务、长沙市图书馆志愿服务等。</view>
+               <view>对外联络部：协会外交家，为协会争取社会资源，促进协会公益项目的改革与创新；代表协会与高校公益组织维持融洽关系，并定期组织高校间公益项目交流活动。</view>
+            </view>
+        </i-collapse-item>
+    </i-collapse>
+</view>
+
+<!--按钮，如果有报名连接了就跳过去，没有就弹窗说还未开始-->
+
+ <view class=" padding-xs flex align-center">
+    <view class="flex-sub text-center">
+      <view class="solid-bottom text-bold padding">协会风采</view>
+      <view class="padding">
+     
+     <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg" mode="widthFix" class='padding-bottom:40rpx;'></image>
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10001.jpg" mode="widthFix" class='padding-bottom:40rpx;'></image>
+     <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10005.jpg" mode="widthFix" class='padding-bottom:40rpx;'></image>
+      <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg" mode="widthFix" class='padding-bottom:40rpx;'></image>
+     </view>
+    </view>
+  </view>
+
+
+<view class="padding flex flex-direction align-center">
+  <button class="cu-btn bg-blue margin-tb-sm lg" style='width:400rpx'>去报名</button>
+</view>

@@ -1,0 +1,5 @@
+/* pages/admin/component/my/manageSignInfo/manageSignInfo.wxss */
+.btn-group{
+    display: flex;
+    justify-content: space-around
+}

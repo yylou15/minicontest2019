@@ -1,6 +1,7 @@
 // pages/rookie/interviewDetail/queue/index.js
 let interviewId;
 let uid = wx.getStorageSync('uid');
+let app = getApp();
 Page({
 
     /**
@@ -15,7 +16,7 @@ Page({
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function(options) {
+    onShow: function(options) {
         console.log(this.data.uid)
         interviewId = 1;
         this.connetWs();
@@ -28,6 +29,12 @@ Page({
             header: {
                 'content-type': 'application/json'
             },
+            success(){
+                console.log("连接上了")
+                that.getQueue()
+            },
+            fail(res){
+            }
             // protocols: ['protocol1'],
             // method: 'GET'
         })
@@ -130,6 +137,20 @@ Page({
                 })
             })
         })
+
+        wx.onSocketClose(function () {
+            wx.connectSocket({
+                url: getApp().data.ws_root,
+                header: {
+                    'content-type': 'application/json'
+                },
+                success() {
+                    that.getQueue()
+                }
+                // protocols: ['protocol1'],
+                // method: 'GET'
+            })
+        })
     },
     startQueuing: function() {
         this.setData({
@@ -159,18 +180,47 @@ Page({
             }),
         })
     },
-
+    getQueue() {
+        let that = this;
+        wx.request({
+            url: app.data.root + 'main/interviews/getQueue',
+            data: {
+                // 这里要改
+                interviewId: that.data.interviewId
+            },
+            success(res) {
+                that.setData({
+                    troopList: res.data
+                })
+                that.getList()
+            }
+        })
+    },
+    getList() {
+        // getList
+        let that = this;
+        wx.request({
+            url: app.data.root + 'main/user/getUsersInfoByUid',
+            data: {
+                uids: that.data.troopList.join(',')
+            },
+            success(res) {
+                that.setData({
+                    userList: res.data.data.reverse()
+                })
+                if (that.data.userList.length) {
+                    that.setData({
+                        // 这个要改
+                        nowInterviewee: that.data.userList[that.data.userList.length - 1].uid
+                    })
+                }
+            }
+        })
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow: function() {
 
     },
 

@@ -1,0 +1,36 @@
+<!--pages/admin/component/my/manageSignInfo/manageSignInfo.wxml-->
+<view class="cu-card article" wx:for="{{signList}}">
+    <view class="cu-item shadow">
+        <view class="title">
+            <view class="text-cut">{{item.name}}
+                <text style='font-size:25rpx;color:#888;'>({{item.status == 1?'进行中':item.status == 0?'未开始' : '已结束'}})</text>
+            </view>
+        </view>
+        <view class="content">
+            <view class="desc">
+                <view class="text-content" style='height:auto'> 创建时间：{{item.create_time}}</view>
+                <view class="text-content"> {{item.introduction}}</view>
+                <view class='btn-group'>
+                    <button bindtap='startSign' data-index='{{index}}' class="cu-btn round shadow bg-blue" wx:if="{{item.status == 0}}">
+                        <view class='cuIcon-playfill text-white'></view>开放报名
+                    </button>
+                    <button bindtap='stopSign' data-index='{{index}}' class="cu-btn round shadow bg-orange" wx:if="{{item.status == 1}}">
+                        <view class='cuIcon-stop text-white'></view>停止报名
+                    </button>
+                    <button data-index='{{index}}' bindtap="gotoAdd" class="cu-btn round shadow bg-blue" wx:if="{{item.if_need_interview == 1 && !item.interviews.length}}">
+                        <view class='cuIcon-add text-white'></view>添加面试
+                        </button>
+                        
+                    <button data-index='{{index}}' data-iid='{{item.interviews[0].iid}}' bindtap="gotoStart" class="cu-btn round shadow bg-blue" wx:if="{{item.interviews.length}}">
+                        <view class='cuIcon-playfill text-white'></view>开始面试
+                        </button>
+                    <button class="cu-btn round shadow bg-red" bindtap='delSign'  data-index='{{index}}'>
+                        <view class='cuIcon-delete text-white'>
+                            删除报名
+                        </view>
+                    </button>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
