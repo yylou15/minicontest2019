@@ -20,7 +20,7 @@
     </view>
   </swiper-item>
 </swiper>
- <view class="cu-card article no-card all-width2">
+ <view class="cu-card article no-card all-width2" bindtap='intro_detail'>
   <view class="cu-item shadow">
     <view class="title">
       <view class="text-cut" style='text-align:left'>中南大学学生会</view>

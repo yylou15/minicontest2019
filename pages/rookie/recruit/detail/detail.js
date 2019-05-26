@@ -7,7 +7,12 @@ Page({
   data: {
 
   },
-
+  question: function (e) {
+    var url = "/pages/rookie/recruit/quesitionaire/question";
+    wx.navigateTo({
+      url: url
+    });
+  },
   /**
    * 生命周期函数--监听页面加载
    */

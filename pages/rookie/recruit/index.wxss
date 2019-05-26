@@ -28,6 +28,7 @@ page,
   border-radius: 30rpx;
   display: flex;
   align-items: center;
+  margin-bottom: 30rpx;
 }
 .touxiang {
   position: relative;

@@ -15,7 +15,12 @@ Page({
   onLoad: function (options) {
 
   },
-
+  gotorecruitdetail: function (e) {
+    var url = "/pages/rookie/recruit/detail/detail";
+    wx.navigateTo({
+      url: url
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
