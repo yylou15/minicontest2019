@@ -1,4 +1,9 @@
-
+<!-- <view class="cu-bar justify-center">
+    <view class="action sub-title">
+      <text class="text-xl text-bold text-blue">我的面试</text>
+      <text class="text-ABC text-blue">Recruit</text>
+   
+    </view></view> -->
 <view class='signup'>
  <view class="cu-avatar xl round touxiang" style="background-image:url(https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=d20bf79eb51c8701c2bbbab44616f54a/00e93901213fb80e879428ad30d12f2eb9389407.jpg);"></view>
 <view class='cont'>

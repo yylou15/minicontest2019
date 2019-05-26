@@ -12,7 +12,12 @@ Page({
       title: "正在招新" //修改title
     });
   },
-
+  recruitdetail: function (e) {
+    var url = "/pages/rookie/recruit/detail/detail";
+    wx.navigateTo({
+      url: url
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

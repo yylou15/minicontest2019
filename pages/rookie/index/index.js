@@ -55,6 +55,12 @@ Page({
       cardCur: e.detail.current
     });
   },
+  intro_detail: function (e) {
+    var url = "/pages/rookie/introduction/conclusion";
+    wx.navigateTo({
+      url: url
+    });
+  },
   // towerSwiper
   // 初始化towerSwiper
   towerSwiper(name) {

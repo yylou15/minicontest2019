@@ -81,6 +81,6 @@
   </view>
 
 
-<view class="padding flex flex-direction align-center">
+<view class="padding flex flex-direction align-center" bindtap='gotorecruitdetail'>
   <button class="cu-btn bg-blue margin-tb-sm lg" style='width:400rpx'>去看招新</button>
 </view>
