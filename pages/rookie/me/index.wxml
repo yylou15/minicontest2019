@@ -14,20 +14,20 @@
 </view>
 
  <view class="cu-list grid col-blue no-border mid-button">
-    <view class="cu-item bloc">
+    <view class="cu-item bloc zindex" bindtap='lookmysignup'>
       <view class="cuIcon-text text-blue ">
       </view>
       <text>我的报名</text>
     </view>
     <view class="cu-item bloc">
-      <view class="cuIcon-my text-blue">
+      <view class="cuIcon-my text-blue" bindtap='lookmyrecruit'>
       </view>
       <text>我的面试</text>
     </view>
   </view>
     <view class="cu-list menu card-menu margin-top-xl margin-bottom-xl shadow-lg radius mid-button">
     <view class="cu-item arrow">
-      <view class="content bind" bindtap="" >
+      <view class="content bind" bindtap="lookmessage" >
         <text class="cuIcon-profile text-grey"></text>
         <text class="text-black txt">个人信息</text>
       </view>

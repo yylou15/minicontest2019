@@ -9,6 +9,24 @@ Page({
       title: "我的" //修改title
     });
   },
+  lookmysignup: function (e) {
+    var url = "/pages/rookie/signup/signup";
+    wx.navigateTo({
+      url: url
+    });
+  },
+  lookmessage: function (e) {
+    var url = "/pages/rookie/message/detail";
+    wx.navigateTo({
+      url: url
+    });
+  },
+  lookmyrecruit: function (e) {
+    var url = "/pages/rookie/recruitstatus/recruitststus";
+    wx.navigateTo({
+      url: url
+    });
+  },
   // lifetimes: {
   //   // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
   //   attached() {

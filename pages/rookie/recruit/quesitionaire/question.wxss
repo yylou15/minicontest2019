@@ -1,0 +1,8 @@
+/* pages/rookie/recruit/quesitionaire/question.wxss */
+
+page,
+.page,
+.page__bd {
+  background-color: #eeece8;
+  padding-bottom: 40rpx;
+}

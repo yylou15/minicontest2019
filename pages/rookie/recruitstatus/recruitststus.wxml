@@ -1,0 +1,41 @@
+
+<view class='signup'>
+ <view class="cu-avatar xl round touxiang" style="background-image:url(https://gss0.bdstatic.com/-4o3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike80%2C5%2C5%2C80%2C26/sign=d20bf79eb51c8701c2bbbab44616f54a/00e93901213fb80e879428ad30d12f2eb9389407.jpg);"></view>
+<view class='cont'>
+ <view class="title">
+      <view class="text-cut title text-blue text-bold" style='font-size:32rpx;'>中南大学学生会</view>
+    </view>
+   <view class="simpleinro">欢迎加入学生会！加入校学生会，一起C位出道！</view>
+   <!-- <view class="padding-xs simpleinro"role=""aria-label="">
+      <view class="cu-tag bg-orange"role=""aria-label="">排队中</view>
+    </view>
+  </view> -->
+
+
+    <!-- <view class="padding-xs simpleinro"role=""aria-label="">
+      <view class="cu-tag bg-green"role=""aria-label="">等待结果ing</view>
+    </view>
+  </view> -->
+
+
+ <view class="padding-xs simpleinro"role=""aria-label="">
+       <view class="action">
+    <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="Modal" style='height:50rpx'>查看结果</button>
+  </view>
+    </view>
+  </view>
+  <view class="cu-modal {{modalName=='Modal'?'show':''}}">
+  <view class="cu-dialog">
+    <view class="cu-bar bg-white justify-end">
+      <view class="content">结果</view>
+      <view class="action" bindtap="hideModal">
+        <text class="cuIcon-close text-red"></text>
+      </view>
+    </view>
+    <view class="padding-xl">
+      恭喜你通过面试！请等待后续通知
+    </view>
+  </view>
+</view>
+  
+</view>

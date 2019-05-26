@@ -1,0 +1,110 @@
+<!--pages/rookie/recruit/detail/detail.wxml-->
+<view class="bg-img bg-mask padding-tb-xl" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');height: 340rpx;">
+  <view class="padding-xl text-white">
+    <view class="padding-xs text-xl">
+      2018校青志协培训部招新
+    </view>
+    <view class="padding-xs">
+      快来pick校青志协一起C位出道！
+    </view>
+  </view>
+</view>
+
+  <view class="cu-bar justify-center">
+    <view class="action sub-title">
+      <text class="text-xl text-bold text-blue">招新介绍</text>
+      <text class="text-ABC text-blue">about</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+
+
+   <view class=" padding-xs flex align-center">
+    <view class="flex-sub text-center solid-top">
+      <view class="padding">
+    中南大学青年志愿者协会（简称“校青志协”）成立于1994年，是湖南各高校中最早开展青年志愿服务工作的团队之一哦！我们秉承着“服务他人，升华自我”的宗旨，在中南大学及周边社区进行志愿服务~在数十年的发展历程中，我们获得了中国百个优秀志愿服务集体奖、中国青年志愿者行动贡献奖、全国防艾工作先进集体奖等各级荣誉41次，涌现出了许许多多优秀的志愿者喔！如果你有一颗爱心与一份对志愿服务的追求，加入我们，准没错！
+     </view>
+    </view>
+  </view>
+
+    <view class="cu-bar justify-center">
+    <view class="action sub-title">
+      <text class="text-xl text-bold text-blue">招新要求</text>
+      <text class="text-ABC text-blue">require</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+
+   <view class=" padding-xs flex align-center">
+    <view class="flex-sub text-center solid-top">
+      <view class="padding">
+      <!--for循环 要求-->
+      <view style='padding-bottom:20rpx'> 1.长得像楼远洋一样帅</view>
+      <view style='padding-bottom:20rpx'>2.热心肠，会打英雄联盟 </view>
+      <view style='padding-bottom:20rpx'>3.有一定的组织能力 </view>
+     </view>
+    </view>
+  </view>
+
+  <view class="cu-bar justify-center">
+    <view class="action sub-title">
+      <text class="text-xl text-bold text-blue">预计招新人数</text>
+      <text class="text-ABC text-blue">PEOPLE</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+   <view class=" padding-xs flex align-center">
+    <view class="flex-sub text-center solid-top">
+      <view class="padding">
+      <view>100人</view>
+     </view>
+    </view>
+  </view>
+
+
+
+
+
+    <view class="cu-bar justify-center">
+    <view class="action sub-title">
+      <text class="text-xl text-bold text-blue">笔试时间&地点</text>
+      <text class="text-ABC text-blue">Exam</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+   <view class=" padding-xs flex align-center">
+    <view class="flex-sub text-center solid-top">
+      <view class="padding">
+      <!--for循环 要求-->
+      <view style='padding-bottom:20rpx'>9月23日</view>
+      <view>c座101,102</view>
+      <!--<view>待定</view>-->
+     </view>
+    </view>
+  </view>
+
+
+
+  
+    <view class="cu-bar justify-center">
+    <view class="action sub-title">
+      <text class="text-xl text-bold text-blue">面试时间&地点</text>
+      <text class="text-ABC text-blue">Interview</text>
+      <!-- last-child选择器-->
+    </view>
+  </view>
+   <view class=" padding-xs flex align-center">
+    <view class="flex-sub text-center solid-top">
+      <view class="padding">
+      <!--for循环 要求-->
+      <!-- <view style='padding-bottom:20rpx'>9月23日</view>
+      <view>c座101,102</view> -->
+      <view>待定</view>
+     </view>
+    </view>
+  </view>
+
+
+  <view class="padding flex flex-direction align-center">
+  <button class="cu-btn bg-blue margin-tb-sm lg" style='width:400rpx'>填写报名</button>
+</view>

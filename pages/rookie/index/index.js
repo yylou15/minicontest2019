@@ -111,22 +111,5 @@ Page({
       });
     }
   },
-  switch_rookie_index: function(e) {
-    var url = "/pages/rookie/index/index";
-    wx.redirectTo({
-      url: url
-    });
-  },
-  switch_rookie_me: function(e) {
-    var url = "/pages/rookie/me/index";
-    wx.redirectTo({
-      url: url
-    });
-  },
-  switch_rookie_recruit: function(e) {
-    var url = "/pages/rookie/recruit/index";
-    wx.redirectTo({
-      url: url
-    });
-  }
+ 
 });
