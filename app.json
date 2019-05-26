@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/rookie/index/index",
+    "pages/rookie/message/detail",
+    "pages/rookie/recruit/quesitionaire/question",
+    "pages/rookie/recruit/detail/detail",
+    "pages/rookie/introduction/conclusion",
+    "pages/admin/index",
+    "pages/index/index",
+    "pages/admin/interviewManage/index",
+    "pages/index/adminLog/adminlog",
+    "pages/index/adminRigister/adminregister",
+    "pages/index/logcode/code",
+    "pages/cap/me/index",
+    "pages/admin/publishSign/publishSign",
+    "pages/recruit/recruit",
+    "pages/recruit/new_recruit/new_recruit",
+    "pages/my/my",
+    "pages/rookie/me/index",
+    "pages/rookie/recruit/index",
+    "pages/rookie/interviewDetail/queue/index",
+    "pages/rookie/interviewDetail/index",
+    "pages/admin/component/my/updateOrgInfo/updateOrgInfo",
+    "pages/admin/component/my/manageSignInfo/manageSignInfo",
+    "pages/admin/component/my/manageSignInfo/addInterview/addInterview",
+    "pages/rookie/signup/signup",
+    "pages/rookie/recruitstatus/recruitststus"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#43adef",
+    "navigationBarTitleText": "萌新方便面",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#8799a3",
+    "selectedColor": "#43adef",
+    "borderStyle": "black",
+    "list": [
+      {
+        "iconPath": "/imgs/TabbarIcon/me.png",
+        "selectedIconPath": "/imgs/TabbarIcon/my_fill.png",
+        "text": "招新",
+        "pagePath": "pages/rookie/index/index"
+      },
+      {
+        "iconPath": "/imgs/TabbarIcon/my.png",
+        "selectedIconPath": "/imgs/TabbarIcon/my_fill.png",
+        "text": "我的",
+        "pagePath": "pages/rookie/recruit/index"
+      },
+      {
+        "iconPath": "/imgs/TabbarIcon/me.png",
+        "selectedIconPath": "/imgs/TabbarIcon/my_fill.png",
+        "text": "我的",
+        "pagePath": "pages/rookie/me/index"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
