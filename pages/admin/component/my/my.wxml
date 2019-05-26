@@ -32,9 +32,9 @@
     </view>
     <view class="cu-item">
         <view class="content">
-            <text class="cuIcon-pic text-blue"></text>
-            <!-- <image src="{{orgInfo.post_url}}" class="png" mode="aspectFit"></image> -->
-            <text class="text-grey">组织宣传图</text>
+            <text wx:if="{{!orgInfo.post_url}}" class="cuIcon-pic text-blue"></text>
+            <image wx:if="{{orgInfo.post_url}}" src="{{orgInfo.post_url}}" class="cuIcon png" mode="aspectFit"></image>
+            <text class="text-grey">上传LOGO</text>
         </view>
         <view class="action">
             <button class="cu-btn round bg-blue shadow" bindtap='uploadOrgBanner'>

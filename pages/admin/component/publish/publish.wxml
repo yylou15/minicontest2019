@@ -7,46 +7,68 @@
     </view>
 </view>
 <view class='wrapper'>
-<form bindsubmit='publish'>
-    <view wx:if='{{num == 0}}'>
-        <view class='publish-form-title'>
-            所属机构
+    <form bindsubmit='publish'>
+        <view wx:if='{{num == 0}}'>
+            <view class='publish-form-title'>
+                所属机构
+            </view>
+            <input class='publish-form-input text-gray' value='{{orgInfo.name}}' disabled></input>
+            <view class='publish-form-title'>
+                招新标题
+            </view>
+            <input class='publish-form-input' placeholder='如：宣传部2019年春季招新' name='name'></input>
+            <view class='publish-form-title'>
+                预招人数
+            </view>
+            <input class='publish-form-input' type='digit' name='totalPlanned'></input>
+            <view class='publish-form-title'>
+                招新简介
+            </view>
+            <view class="textarea-group">
+                <textarea class='textarea' maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="输入本次招新简介（100字左右）" name='introduction'></textarea>
+            </view>
+            <view class='publish-form-title'>是否需要面试</view>
+            <radio-group class='radio-gruop' name='ifNeedInterview'>
+                <view style='display:inline-block'>
+                    <radio class="blue radio" value='1'></radio> 是</view>
+                <view style='display:inline-block'>
+                    <radio class="blue radio margin-left-sm" value='0'></radio> 否</view>
+            </radio-group>
+            <view class='publish-form-title'>招新要求</view>
+            <button class='cu-btn bg-blue shadow' bindtap='addReq'>
+                <text class='cuIcon-add lg text-white'></text> 新增
+            </button>
+            <button class='cu-btn bg-blue shadow margin-left-lg' bindtap='delReq'>
+                <text class='cuIcon-add lg text-white'></text> 删除
+            </button>
+            <input class='publish-form-input margin-top-lg' bindinput='setReq' wx:for='{{requirements}}' type='text' placeholder='请输入要求{{index + 1}}' data-index='{{index}}' value='{{item}}' name='requirement{{index + 1}}'>
+            </input>
+
+            <view class="cu-bar margin-top publish-form-title">
+                <view>
+                    展示图片
+                </view>
+                <view class="action">
+                    {{imgList.length}}/4
+                </view>
+            </view>
+            <view class="cu-form-group">
+                <view class="grid col-4 grid-square flex-sub">
+                    <view class="bg-img" wx:for="{{imgList}}" wx:key="{{index}}" bindtap="ViewImage" data-url="{{imgList[index]}}">
+                        <image src='{{imgList[index]}}' mode='aspectFill'></image>
+                        <view class="cu-tag bg-red" catchtap="DelImg" data-index="{{index}}">
+                            <text class="cuIcon-close"></text>
+                        </view>
+                    </view>
+                    <view class="solids" bindtap="ChooseImage" wx:if="{{imgList.length<4}}">
+                        <text class="cuIcon-cameraadd"></text>
+                    </view>
+                </view>
+            </view>
         </view>
-        <input class='publish-form-input text-gray' value='{{orgInfo.name}}' disabled></input>
-        <view class='publish-form-title'>
-            招新标题
-        </view>
-        <input class='publish-form-input' placeholder='如：宣传部2019年春季招新' name='name'></input>
-        <view class='publish-form-title'>
-            预招人数
-        </view>
-        <input class='publish-form-input' type='digit' name='totalPlanned'></input>
-        <view class='publish-form-title'>
-            招新简介
-        </view>
-        <view class="textarea-group">
-            <textarea class='textarea' maxlength="-1" disabled="{{modalName!=null}}" bindinput="textareaAInput" placeholder="输入本次招新简介（100字左右）" name='introduction'></textarea>
-        </view>
-        <view class='publish-form-title'>是否需要面试</view>
-        <radio-group class='radio-gruop' name='ifNeedInterview'>
-            <view style='display:inline-block'>
-                <radio class="blue radio" value='1'></radio> 是</view>
-            <view style='display:inline-block'>
-                <radio class="blue radio margin-left-sm" value='0'></radio> 否</view>
-        </radio-group>
-        <view class='publish-form-title'>招新要求</view>
-        <button class='cu-btn bg-blue shadow' bindtap='addReq'>
-            <text class='cuIcon-add lg text-white'></text> 新增
+        <view wx:if='{{num == 1}}'>3</view>
+        <button class="cu-btn block bg-blue margin-tb-sm lg" form-type="{{num == 0?'submit':''}}">
+            <text class="{{showLoading}} iconfont-spin"></text> {{showLoading == "cuIcon-loading2"? '下一步' : num == 1? '完成':'下一步'}}
         </button>
-        <button class='cu-btn bg-blue shadow margin-left-lg' bindtap='delReq'>
-            <text class='cuIcon-add lg text-white'></text> 删除
-        </button>
-        <input class='publish-form-input margin-top-lg' bindinput='setReq' wx:for='{{requirements}}' type='text' placeholder='请输入要求{{index + 1}}' data-index='{{index}}' value='{{item}}' name='requirement{{index + 1}}'>
-        </input>
-    </view>
-    <view wx:if='{{num == 1}}'>3</view>
-    <button class="cu-btn block bg-blue margin-tb-sm lg" form-type="{{num == 0?'submit':''}}">
-        <text class="{{showLoading}} iconfont-spin"></text> {{showLoading == "cuIcon-loading2"? '下一步' : num == 1? '完成':'下一步'}}
-    </button>
-</form>
+    </form>
 </view>

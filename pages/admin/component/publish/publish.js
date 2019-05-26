@@ -12,6 +12,7 @@ Component({
      */
     data: {
         num: 0,
+        imgList:[],
         // 步骤条
         numList: [{
             name: '基本信息'
@@ -20,7 +21,7 @@ Component({
         },],
         // 要求
         requirements: [
-            '会XXXX'
+            
         ],
         // showLoading: 'cuIcon-loading2',
         showLoading: '',
@@ -44,6 +45,47 @@ Component({
      * 组件的方法列表
      */
     methods: {
+        // 上传图片
+        ChooseImage() {
+            wx.chooseImage({
+                count: 4, //默认9
+                sizeType: ['original', 'compressed'], //可以指定是原图还是压缩图，默认二者都有
+                sourceType: ['album'], //从相册选择
+                success: (res) => {
+                    if (this.data.imgList.length != 0) {
+                        this.setData({
+                            imgList: this.data.imgList.concat(res.tempFilePaths)
+                        })
+                    } else {
+                        this.setData({
+                            imgList: res.tempFilePaths
+                        })
+                    }
+                }
+            });
+        },
+        ViewImage(e) {
+            wx.previewImage({
+                urls: this.data.imgList,
+                current: e.currentTarget.dataset.url
+            });
+        },
+        DelImg(e) {
+            wx.showModal({
+                title: '删除',
+                content: '确定要删除这张图片吗？',
+                cancelText: '取消',
+                confirmText: '确定',
+                success: res => {
+                    if (res.confirm) {
+                        this.data.imgList.splice(e.currentTarget.dataset.index, 1);
+                        this.setData({
+                            imgList: this.data.imgList
+                        })
+                    }
+                }
+            })
+        },
         // 下一步
         publish(e){
             this.setData({
@@ -52,6 +94,8 @@ Component({
             let that = this
             console.log(e.detail.value)
             e.detail.value.oid = wx.getStorageSync('oid')
+            e.detail.value.imgList = this.data.imgList.join(',')
+
             wx.request({
                 url: getApp().data.root + 'main/organizations/createSignUp',
                 data:e.detail.value,
@@ -63,7 +107,19 @@ Component({
                         showLoading: ''
                     })
                     if(res.data.status == true){
-                        that.numSteps()
+                        for (let i in that.data.imgList) {
+                            wx.uploadFile({
+                                url: getApp().data.root + 'main/organizations/createSignUp',
+                                filePath: that.data.imgList[i],
+                                formData: {
+                                    sid: res.data.sid
+                                },
+                                name: 'oneImg',
+                                success(res1) {
+                                        that.numSteps()
+                                }
+                            })
+                        }
                     }else{
                         wx.showToast({
                             title: res.data.msg,

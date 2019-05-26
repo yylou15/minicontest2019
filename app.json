@@ -1,12 +1,12 @@
 {
   "pages": [
+    "pages/index/index",
     "pages/rookie/index/index",
     "pages/rookie/message/detail",
     "pages/rookie/recruit/quesitionaire/question",
     "pages/rookie/recruit/detail/detail",
     "pages/rookie/introduction/conclusion",
     "pages/admin/index",
-    "pages/index/index",
     "pages/admin/interviewManage/index",
     "pages/index/adminLog/adminlog",
     "pages/index/adminRigister/adminregister",

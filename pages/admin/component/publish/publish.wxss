@@ -1,9 +1,13 @@
 /* pages/admin/publishSign/publishSign.wxss */
 
 .wrapper {
-    padding: 10rpx 80rpx;
+    padding: 10rpx 50rpx;
 }
-
+.cu-form-group{
+    background-color: #fff;
+    border-radius: 25rpx;
+    padding-top: 25rpx
+}
 .publish-form-title {
     color: #43adef;
     font-size: 30rpx;
