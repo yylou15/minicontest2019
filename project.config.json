@@ -39,14 +39,35 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 1,
 			"list": [
 				{
 					"id": 0,
 					"name": "12",
-					"pathName": "pages/admin/component/my/manageSignInfo/addInterview/addInterview",
+					"pathName": "pages/rookie/index/index",
 					"query": "sid=5",
 					"scene": 1005
+				},
+				{
+					"id": 1,
+					"name": "客户端",
+					"pathName": "pages/rookie/index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "面试管理端",
+					"pathName": "pages/admin/interviewManage/index",
+					"query": "iid=9",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "mianshi",
+					"pathName": "pages/rookie/interview/interview",
+					"query": "sid=5",
+					"scene": null
 				}
 			]
 		}

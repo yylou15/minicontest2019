@@ -1,0 +1,38 @@
+<!-- <view class='signup margin-bottom'>
+
+    <view class="cu-avatar xl round touxiang bg-white" style="background-image:url({{item.orgInfo.post_url?item.orgInfo.post_url:'/imgs/sign.jpg'}});"></view>
+    <view class='cont'>
+        <view class="title">
+            <view class="text-cut title text-blue text-bold" style='font-size:32rpx;display:inline-block'>{{item.orgInfo.name}}</view>
+        </view>
+        <view class="simpleinro">{{item.signUpInfo.name}}</view>
+        <view class='time'>
+            <button class='cu-btn round bg-blue shadow'>
+                开始面试
+            </button>
+        </view>
+
+    </view>
+</view> -->
+
+<view class="cu-card article" wx:for="{{signList}}">
+    <!-- <view  -->
+    <view class="cu-item shadow" wx:for='{{item.interviewInfo}}' wx:for-item="interviewItem">
+        <view class="title">
+            <view class="text-cut">{{item.orgInfo.name}}</view>
+        </view>
+        <view class="content">
+            <image src="{{item.orgInfo.post_url?item.orgInfo.post_url:'/imgs/sign.jpg'}}" mode="aspectFit"></image>
+            <view class="desc">
+                <view class="text-content"> {{item.signUpInfo.name}}</view>
+                <view wx:if="{{interviewItem.status}}">
+                    <button class='cu-btn round shadow bg-blue' bindtap='gotoQueue' data-iid='{{interviewItem.iid}}'>开始排队面试</button>
+                </view>
+                <view wx:if="{{interviewItem.status == 0}}">
+                    <button class='cu-btn round shadow bg-blue' disabled>暂未开放面试</button>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- </view> -->
+</view>

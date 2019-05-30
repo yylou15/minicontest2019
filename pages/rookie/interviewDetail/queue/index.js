@@ -12,13 +12,15 @@ Page({
         troopLength: 0,
         uid: wx.getStorageSync('uid')
     },
-
+    onLoad:function(options){
+        interviewId = options.iid;
+        this.connetWs();
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onShow: function(options) {
         console.log(this.data.uid)
-        interviewId = 1;
         this.connetWs();
     },
     // ws部分
@@ -41,72 +43,75 @@ Page({
         wx.onSocketMessage(function(res) {
             console.log(res.data)
             res = JSON.parse(res.data);
-            switch (res.type) {
-                case 'troopLength':
-                    that.setData({
-                        troopLength: res.content
-                    });
-                    break;
-                case 'troopLength_join':
-                    that.setData({
-                        troopLength: res.content,
-                        // left: res.content - 1
-                    });
-                    wx.sendSocketMessage({
-                        data: JSON.stringify({
-                            'type': 'getLeft',
-                            'content': {
-                                'interview_id': 1,
-                                'uid': wx.getStorageSync('uid')
-                            }
-                        }),
-                    });
-                    break;
-                case 'troopLength_leave':
-                    that.setData({
-                        troopLength: res.content
-                    });
-                    if (that.data.ifQueuing) {
+            if (res.id == interviewId){
+
+                switch (res.type) {
+                    case 'troopLength':
+                        that.setData({
+                            troopLength: res.content
+                        });
+                        break;
+                    case 'troopLength_join':
+                        that.setData({
+                            troopLength: res.content,
+                            // left: res.content - 1
+                        });
                         wx.sendSocketMessage({
                             data: JSON.stringify({
                                 'type': 'getLeft',
                                 'content': {
-                                    'interview_id': 1,
+                                    'interview_id': interviewId,
                                     'uid': wx.getStorageSync('uid')
                                 }
                             }),
-                        })
-                    }
-                    break;
-                case 'getLeft':
-                    that.setData({
-                        left: res.content
-                    });
-                    break;
-
-                case 'troopList':
-                    if (that.data.troopList != res.content) {
+                        });
+                        break;
+                    case 'troopLength_leave':
                         that.setData({
-                            troopList: res.content
-                        })
-                        wx.showLoading({
-                            title: '获取排队信息...',
-                        })
-                        wx.request({
-                            url: getApp().data.root + 'main/user/getInfoList',
-                            data:{
-                                userList: res.content
-                            },
-                            success:function(res){
-                                that.setData({
-                                    userList : res.data
-                                })
-                                wx.hideLoading()
-                            }
-                        })
-                    }
-                    
-                    break;
+                            troopLength: res.content
+                        });
+                        if (that.data.ifQueuing) {
+                            wx.sendSocketMessage({
+                                data: JSON.stringify({
+                                    'type': 'getLeft',
+                                    'content': {
+                                        'interview_id': interviewId,
+                                        'uid': wx.getStorageSync('uid')
+                                    }
+                                }),
+                            })
+                        }
+                        break;
+                    case 'getLeft':
+                        that.setData({
+                            left: res.content
+                        });
+                        break;
+
+                    case 'troopList':
+                        if (that.data.troopList != res.content) {
+                            that.setData({
+                                troopList: res.content
+                            })
+                            wx.showLoading({
+                                title: '获取排队信息...',
+                            })
+                            wx.request({
+                                url: getApp().data.root + 'main/user/getInfoList',
+                                data: {
+                                    userList: res.content
+                                },
+                                success: function (res) {
+                                    that.setData({
+                                        userList: res.data
+                                    })
+                                    wx.hideLoading()
+                                }
+                            })
+                        }
+
+                        break;
+                }
             }
         })
         wx.onSocketOpen(function() {
@@ -121,7 +126,7 @@ Page({
                 data: JSON.stringify({
                     'type': 'getTroopLength',
                     'content': {
-                        'interview_id': 1,
+                        'interview_id': interviewId,
                         'uid': wx.getStorageSync('uid')
                     }
                 })
@@ -131,7 +136,7 @@ Page({
                 data: JSON.stringify({
                     'type': 'setUid',
                     'content': {
-                        'interview_id': 1,
+                        'interview_id': interviewId,
                         'uid': wx.getStorageSync('uid')
                     }
                 })
@@ -153,6 +158,7 @@ Page({
         })
     },
     startQueuing: function() {
+        let that = this
         this.setData({
             ifQueuing: true
         })
@@ -160,13 +166,14 @@ Page({
             data: JSON.stringify({
                 'type': 'joinTroop',
                 'content': {
-                    'interview_id': 1,
+                    'interview_id': interviewId,
                     'uid': wx.getStorageSync('uid')
                 }
             }),
         })
     },
     cancelQueuing: function() {
+        let that = this
         this.setData({
             ifQueuing: false
         })
@@ -174,7 +181,7 @@ Page({
             data: JSON.stringify({
                 'type': 'leaveTroop',
                 'content': {
-                    'interview_id': 1,
+                    'interview_id': interviewId,
                     'uid': wx.getStorageSync('uid')
                 }
             }),
@@ -186,7 +193,7 @@ Page({
             url: app.data.root + 'main/interviews/getQueue',
             data: {
                 // 这里要改
-                interviewId: that.data.interviewId
+                interviewId: interviewId
             },
             success(res) {
                 that.setData({
@@ -198,24 +205,26 @@ Page({
     },
     getList() {
         // getList
-        let that = this;
-        wx.request({
-            url: app.data.root + 'main/user/getUsersInfoByUid',
-            data: {
-                uids: that.data.troopList.join(',')
-            },
-            success(res) {
-                that.setData({
-                    userList: res.data.data.reverse()
-                })
-                if (that.data.userList.length) {
+        if(this.data.troopList.length){
+            let that = this;
+            wx.request({
+                url: app.data.root + 'main/user/getUsersInfoByUid',
+                data: {
+                    uids: that.data.troopList.join(',')
+                },
+                success(res) {
                     that.setData({
-                        // 这个要改
-                        nowInterviewee: that.data.userList[that.data.userList.length - 1].uid
+                        userList: res.data.data.reverse()
                     })
+                    if (that.data.userList.length) {
+                        that.setData({
+                            // 这个要改
+                            nowInterviewee: that.data.userList[that.data.userList.length - 1].uid
+                        })
+                    }
                 }
-            }
-        })
+            })
+        }
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

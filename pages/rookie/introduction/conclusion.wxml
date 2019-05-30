@@ -1,32 +1,30 @@
 <!--pages/rookie/recruitConclusion/conclusion.wxml-->
 <!--宣传图-->
-<view class="bg-img bg-mask padding-tb-xl" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');height: 340rpx;">
-  <view class="padding-xl text-white">
-    <view class="padding-xs text-xl">
-      跳跳糖协会
+<view class="bg-img bg-mask padding-tb-xl" style="background-image: url('{{orgInfo.post_url?orgInfo.post_url:'https://mini2019.oss-cn-hangzhou.aliyuncs.com/defaultPost.png'}}');height: 340rpx;">
+    <view class="padding-xl text-white">
+        <view class="padding-xs text-xl">
+            {{orgInfo.name}}
+        </view>
+        <view class="padding-xs">
+            {{orgInfo.school.name}}
+        </view>
     </view>
-    <view class="padding-xs">
-      一个很喜欢吃跳跳糖的协会
-    </view>
-  </view>
 </view>
 <!--协会介绍-->
- <view class=" padding-xs flex align-center">
+<view class=" padding-xs flex align-center">
     <view class="flex-sub text-center">
-      <view class="solid-bottom text-bold padding">协会介绍</view>
-      <view class="padding">
-      中南大学青年志愿者协会，简称校青志协，现为隶属于中南大学团委的学生组织之一。协会下有二级学院青年志愿者分会，此外，湘雅医学院青志协于2016年并入组织。
-校青志协成立于1994年，至今已有二十三年的发展历史，是湖南各高校中最早开展青年志愿服务工作的团队之一。在学校团委的大力支持和多届会长的正确领导下，校青志协本着与时代同步、为社会分忧的原则，根据学校及社会实际需求，不计报酬、不问付出，尽己所能地帮助身边的同学和社会弱势群体，深入开展青年志愿服务行动。二十几年来，队伍不断壮大、领域不断拓展、服务不断深化，得到了学校和社会的广泛肯定。
-中南大学青年志愿者协会下设行政中心（含办公室、组织部、培训部）、宣传中心（含宣传部、媒体部）、项目中心（项目部、对外联络部）、行动中心（含义务家教部、敬老爱幼部、阳光支教部、电脑维修部、希望捐赠部）四个中心。另中南大学青年志愿者协会湘雅分会共（办公室、组织部、宣传部、项目部、活动部）五个部门。</view>
+        <view class="solid-bottom text-bold padding">协会介绍</view>
+        <view class="padding">
+            {{orgInfo.introduction}}</view>
     </view>
-  </view>
+</view>
 <!--部门图-->
-   <view class=" padding-xs flex align-center">
+<!-- <view class=" padding-xs flex align-center">
     <view class="flex-sub text-center">
       <view class=" text-bold padding">部门介绍</view>
     </view>
-  </view>
-<view class="caption-wrap padding-xs">
+  </view> -->
+<!-- <view class="caption-wrap padding-xs">
     <i-collapse name="{{name}}" >
         <i-collapse-item
                 name="name1"
@@ -63,11 +61,17 @@
             </view>
         </i-collapse-item>
     </i-collapse>
-</view>
+</view> -->
 
 <!--按钮，如果有报名连接了就跳过去，没有就弹窗说还未开始-->
 
- <view class=" padding-xs flex align-center">
+<!--招新列表-->
+<view class=" padding-xs flex align-center">
+    <view class="flex-sub text-center">
+        <view class="solid-bottom text-bold padding">招新列表</view>
+    </view>
+</view>
+<!-- <view class=" padding-xs flex align-center">
     <view class="flex-sub text-center">
       <view class="solid-bottom text-bold padding">协会风采</view>
       <view class="padding">
@@ -78,9 +82,23 @@
       <image src="https://ossweb-img.qq.com/images/lol/web201310/skin/big10004.jpg" mode="widthFix" class='padding-bottom:40rpx;'></image>
      </view>
     </view>
-  </view>
+  </view> -->
 
+<view class='padding'>
+    <view class="padding-lr bg-white text-center card margin-bottom" wx:for="{{signInfo}}">
+        <view class="solid-bottom padding">
+            <text class="text-ABC">{{item.name}}</text>
+        </view>
+        <view class="">
 
-<view class="padding flex flex-direction align-center" bindtap='gotorecruitdetail'>
-  <button class="cu-btn bg-blue margin-tb-sm lg" style='width:400rpx'>去看招新</button>
+            <view class=" flex flex-direction align-center">
+                <button bindtap="gotorecruitdetail" data-sid='{{item.sid}}' class="cu-btn bg-blue margin-tb-sm" style='width:400rpx'>去看招新</button>
+            </view>
+        </view>
+    </view>
+</view>
+<view wx:if='{{!signInfo.length}}'>
+      <view class="text-sm text-center">
+        <text class="text-grey">暂无</text>
+      </view>
 </view>

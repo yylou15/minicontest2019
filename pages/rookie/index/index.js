@@ -43,6 +43,31 @@ Page({
   onLoad() {
     this.towerSwiper("swiperList");
     // 初始化towerSwiper 传已有的数组名即可
+
+    // 获取报名
+    let that = this;
+    wx.showLoading({
+        title: '加载中...',
+    })
+    wx.request({
+        url: getApp().data.root + 'main/organizations/getAll',
+        success(res){
+            console.log(res.data)
+            that.setData({
+                orgList: res.data
+            })
+            wx.request({
+                url: getApp().data.root + 'main/organizations/getPostOrg',
+                success(res1) {
+                    console.log(res1.data)
+                    that.setData({
+                        orgPost: res1.data
+                    })
+                    wx.hideLoading()
+                }
+            })
+        }
+    })
   },
   DotStyle(e) {
     this.setData({
@@ -58,7 +83,7 @@ Page({
   intro_detail: function (e) {
     var url = "/pages/rookie/introduction/conclusion";
     wx.navigateTo({
-      url: url
+        url: url + '?oid=' + e.currentTarget.dataset.oid
     });
   },
   // towerSwiper

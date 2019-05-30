@@ -1,88 +1,94 @@
 // pages/rookie/me/index.js
 Page({
-  data: {},
-  onShow: function() {
-    this.startAnimation();
-  },
-  onLoad: function() {
-    wx.setNavigationBarTitle({
-      title: "我的" //修改title
-    });
-  },
-  lookmysignup: function (e) {
-    var url = "/pages/rookie/signup/signup";
-    wx.navigateTo({
-      url: url
-    });
-  },
-  lookmessage: function (e) {
-    var url = "/pages/rookie/message/detail";
-    wx.navigateTo({
-      url: url
-    });
-  },
-  lookmyrecruit: function (e) {
-    var url = "/pages/rookie/recruitstatus/recruitststus";
-    wx.navigateTo({
-      url: url
-    });
-  },
-  // lifetimes: {
-  //   // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
-  //   attached() {
-  //
-  //   },
-  //   moved() { },
-  //   detached() { },
-  // },
-  // pageLifetimes: {
-  //   // 组件所在页面的生命周期函数
-  //   show() {
+    data: {},
+    onShow: function() {
+        this.startAnimation();
+    },
+    onLoad: function() {
+        wx.setNavigationBarTitle({
+            title: "我的" //修改title
+        });
+    },
+    gotoInterview: function () {
+        var url = "/pages/rookie/interview/interview";
+        wx.navigateTo({
+            url: url
+        });
+    },
+    lookmysignup: function(e) {
+        var url = "/pages/rookie/signup/signup";
+        wx.navigateTo({
+            url: url
+        });
+    },
+    lookmessage: function(e) {
+        var url = "/pages/rookie/message/detail";
+        wx.navigateTo({
+            url: url
+        });
+    },
+    lookmyrecruit: function(e) {
+        var url = "/pages/rookie/recruitstatus/recruitststus";
+        wx.navigateTo({
+            url: url
+        });
+    },
+    // lifetimes: {
+    //   // 生命周期函数，可以为函数，或一个在methods段中定义的方法名
+    //   attached() {
+    //
+    //   },
+    //   moved() { },
+    //   detached() { },
+    // },
+    // pageLifetimes: {
+    //   // 组件所在页面的生命周期函数
+    //   show() {
 
-  //    },
-  //   hide() { },
-  //   resize() { },
-  // },
+    //    },
+    //   hide() { },
+    //   resize() { },
+    // },
 
-  startAnimation: function() {
-    let next = true;
-    setInterval(
-      function() {
-        if (next) {
-          //导出动画数据传递给组件的animation属性。
-          this.setData({
-            waveAnimation: wx
-              .createAnimation({
-                duration: 2000,
-                timingFunction: "linear",
-                delay: 0,
-                transformOrigin: "50% 50%"
-              })
-              .scale(2)
-              .opacity(0)
-              .step()
-              .export()
-          });
-          next = !next;
-        } else {
-          //导出动画数据传递给组件的animation属性。
-          this.setData({
-            waveAnimation: wx
-              .createAnimation({
-                duration: 1,
-                timingFunction: "linear",
-                delay: 0,
-                transformOrigin: "50% 50%"
-              })
-              .scale(1)
-              .opacity(1)
-              .step()
-              .export()
-          });
-          next = !next;
-        }
-      }.bind(this),
-      2000
-    );
-  }
+    startAnimation: function() {
+        let next = true;
+        setInterval(
+            function() {
+                if (next) {
+                    //导出动画数据传递给组件的animation属性。
+                    this.setData({
+                        waveAnimation: wx
+                            .createAnimation({
+                                duration: 2000,
+                                timingFunction: "linear",
+                                delay: 0,
+                                transformOrigin: "50% 50%"
+                            })
+                            .scale(2)
+                            .opacity(0)
+                            .step()
+                            .export()
+                    });
+                    next = !next;
+                } else {
+                    //导出动画数据传递给组件的animation属性。
+                    this.setData({
+                        waveAnimation: wx
+                            .createAnimation({
+                                duration: 1,
+                                timingFunction: "linear",
+                                delay: 0,
+                                transformOrigin: "50% 50%"
+                            })
+                            .scale(1)
+                            .opacity(1)
+                            .step()
+                            .export()
+                    });
+                    next = !next;
+                }
+            }.bind(this),
+            2000
+        );
+    }
 });

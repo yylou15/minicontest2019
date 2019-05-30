@@ -8,10 +8,38 @@ Page({
         interviewId: '',
         remark: ''
     },
-    onLoad: function(options){
+    onLoad: function(options) {
+        let that = this
         console.log(options)
         this.setData({
             interviewId: options.iid
+        })
+        // 获取队列信息
+        wx.request({
+            url: getApp().data.root + 'main/interviews/getQueue',
+            data: {
+                interviewId: that.data.interviewId
+            },
+            success(res) {
+                console.log(res.data)
+            }
+        })
+        wx.request({
+            url: getApp().data.root + 'main/interviews/start',
+            method: 'POST',
+            data: {
+                iid: options.iid
+            }
+        })
+    },
+    onUnload: function() {
+        let that = this;
+        wx.request({
+            url: getApp().data.root + 'main/interviews/stop',
+            method: 'POST',
+            data: {
+                iid: that.data.iid
+            }
         })
     },
     onShow: function(options) {
@@ -20,8 +48,18 @@ Page({
         this.setData({
             recorderManager: wx.getRecorderManager()
         })
-        // 录音配置
         let that = this;
+        // 获取队列信息
+        wx.request({
+            url: getApp().data.root + 'main/interviews/getQueue',
+            data: {
+                interviewId: that.data.interviewId
+            },
+            success(res) {
+                console.log(res.data)
+            }
+        })
+        // 录音配置
         this.data.recorderManager.onStop((res) => {
             wx.uploadFile({
                 url: app.data.root + 'main/interviews/uploadVoiceRecord',
@@ -36,23 +74,24 @@ Page({
                     that.setData({
                         remark: ''
                     })
-                    if (res.data.status == true) {
-                        wx.sendSocketMessage({
-                            data: JSON.stringify({
-                                type: 'completeOne',
-                                content: {
-                                    interviewId: that.data.interviewId,
-                                    interviewee: that.data.nowInterviewee
-                                }
-                            }),
-                            success: function(res) {
-                                wx.hideLoading()
-                                wx.showToast({
-                                    title: '成功',
-                                })
-                            }
-                        })
-                    }
+                    wx.hideLoading()
+
+                    wx.sendSocketMessage({
+                        data: JSON.stringify({
+                            type: 'completeOne',
+                            content: {
+                                interviewee: that.data.nowInterviewee
+                            },
+                            interviewId: that.data.interviewId,
+                        }),
+                        success: function(res) {
+                            wx.hideLoading()
+                            wx.showToast({
+                                title: '成功',
+                            })
+                        }
+                    })
+                    if (res.data.status == true) {}
                 }
             })
         })
@@ -114,7 +153,7 @@ Page({
             format: 'mp3'
         })
     },
-    comleteInterview() {
+    completeInterview() {
         let that = this;
         wx.showLoading({
             title: '加载中...',
@@ -138,11 +177,11 @@ Page({
                         data: JSON.stringify({
                             'type': 'leaveTroop',
                             'content': {
-                                'interview_id': that.data.interviewId,
                                 'uid': that.data.nowInterviewee
-                            }
+                            },
+                            'interview_id': that.data.interviewId
                         }),
-                        success: function (res) {
+                        success: function(res) {
                             wx.hideLoading()
                             wx.showToast({
                                 title: '成功',
@@ -169,16 +208,18 @@ Page({
         })
         wx.onSocketMessage(function(res) {
             res = JSON.parse(res.data);
-            if (res.type == 'troopList') {
-                that.setData({
-                    queueList: res.content.split(',')
-                })
-                if (that.data.queueList.length && that.data.queueList[0] == ''){
+            if (res.id == that.data.interviewId) {
+                if (res.type == 'troopList') {
                     that.setData({
-                        queueList : []
+                        queueList: res.content.split(',')
                     })
+                    if (that.data.queueList.length && that.data.queueList[0] == '') {
+                        that.setData({
+                            queueList: []
+                        })
+                    }
+                    that.getList()
                 }
-                that.getList()
             }
         })
         wx.onSocketClose(function() {
@@ -195,12 +236,13 @@ Page({
             })
         })
     },
-    onUnload(){
+    onUnload() {
         wx.closeShocket({
-            
+
         })
     },
-    textareaAInput(e) {
+    textareaInput(e) {
+        console.log(e)
         this.setData({
             remark: e.detail.value
         })

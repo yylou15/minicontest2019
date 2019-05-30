@@ -44,7 +44,7 @@ Page({
                             wx.setStorageSync("code", code);
                             wx.redirectTo({
                                 url: '/pages/admin/index',
-                            });
+                            })
                         }
                     });
                 } else {

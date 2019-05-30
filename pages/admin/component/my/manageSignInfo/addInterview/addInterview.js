@@ -20,6 +20,9 @@ Page({
         })
     },
     addInterview(e) {
+        wx.showLoading({
+            title: '',
+        })
         console.log(e.detail.value)
         e.detail.value.sid = this.data.sid;
         wx.request({
@@ -28,6 +31,7 @@ Page({
             data: e.detail.value,
             success(res) {
                 if(res.data.status){
+                    wx.hideLoading()
                     wx.showToast({
                         title: '提交成功',
                         success(){
